@@ -6,7 +6,7 @@ var PRODUCT_CONFIG = {
   badge: "2026 EDITION",
   currentPrice: 99,
   originalPrice: 1299,
-  buyUrl: "https://superprofile.bio/vp/6aa90df8ecf1df0013c2c708",
+  buyUrl: "https://superprofile.bio/vp/master-sql-from-zero-—-learn-to-write-real-sql-queries-with-confidence",
   whatsappNumber: "+918595403030",
   whatsappDisplay: "+91-8595403030",
   supportEmail: "admin@xambuddy.in",
