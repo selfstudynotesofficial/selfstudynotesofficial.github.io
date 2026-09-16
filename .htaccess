@@ -1,0 +1,2 @@
+# Redirect 404 errors directly to home
+ErrorDocument 404 /index.html

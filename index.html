@@ -1,0 +1,1775 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "yhhe8erzdc");
+  </script>
+  <!-- Meta Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2280534892790197');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=2280534892790197&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel Code -->
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-TFBR93R9');</script>
+  <!-- End Google Tag Manager -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="theme-color" content="#EBAF87" />
+
+  <title>INDIA'S No. 1 Practical SQL Notes 2026 | Master Databases, Queries & JOINs</title>
+  <meta name="description"
+    content="Master SQL from zero with 16 practical core units, hand-drawn schema diagrams, Venn diagrams for JOINs, constraints, query execution order, and solved interview questions at just ₹99." />
+  <meta name="keywords"
+    content="SQL Notes 2026, Learn SQL from Scratch, SQL Joins Explained, SQL Ebook PDF Download, DBMS & SQL Study Material, BCA BTech SQL Notes, SQL Interview Preparation, SQL Mastery 2026, SelfNotes SQL Ebook" />
+  <link rel="canonical" href="https://selfnotes99.github.io" />
+  <link rel="icon" type="image/png" href="assets/topper_logo.png" />
+
+  <!-- OpenGraphF -->
+  <meta property="og:title" content="Practical SQL Notes 2026 | Master Databases & Queries" />
+  <meta property="og:description"
+    content="Master SQL fundamentals, table relationships, and JOINs with 16 illustrated units at ₹99." />
+  <meta property="og:url" content="https://selfnotes99.github.io" />
+  <meta property="og:site_name" content="SQL Mastery" />
+  <meta property="og:image" content="https://selfnotes99.github.io/assets/sql/02_sql_sublanguages.webp" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Practical SQL Notes 2026 | Master Databases & Queries" />
+  <meta name="twitter:description"
+    content="Complete 16-Unit Practical SQL Study Kit with Hand-Drawn Notes & Diagrams at ₹99." />
+  <meta name="twitter:image" content="https://selfnotes99.github.io/assets/sql/02_sql_sublanguages.webp" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            peach: {
+              DEFAULT: '#EBAF87',
+              50: '#FDF8F5',
+              100: '#FAF0E9',
+              200: '#F4DDCB',
+              300: '#EFC7AB',
+              400: '#EBAF87',
+              500: '#E39768',
+              600: '#D57B45',
+            },
+            cream: {
+              DEFAULT: '#F7E5D3',
+              light: '#FCF7F0',
+              dark: '#EED6C0',
+            },
+            maroon: {
+              DEFAULT: '#7C2928',
+              light: '#963433',
+              dark: '#521B18',
+              deep: '#3E1311',
+            },
+            deep: {
+              text: '#1F1714',
+              muted: '#4A3E39',
+            },
+            gold: {
+              DEFAULT: '#E5A835',
+              light: '#F59E0B',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
+            heading: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "SQL Mastery",
+      "url": "https://selfnotes99.github.io",
+      "description": "Master SQL from zero with 16 practical core units, hand-drawn schema diagrams, and solved interview questions.",
+      "inLanguage": "en-IN"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "SQL Made Simple 2026 – The Practical Beginner's Guide",
+      "image": "https://selfnotes99.github.io/assets/sql/02_sql_sublanguages.webp",
+      "description": "Complete 16-Unit Practical SQL Study Kit including smart visual notes, ER diagrams, JOIN Venn diagrams, constraints, and solved queries.",
+      "brand": {
+        "@type": "Brand",
+        "name": "SQL Mastery"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "99",
+        "priceCurrency": "INR",
+        "availability": "https://schema.org/InStock",
+        "url": "https://superprofile.bio/vp/6aa90df8ecf1df0013c2c708"
+      }
+    }
+  ]
+  </script>
+</head>
+
+<body
+  class="antialiased min-h-screen flex flex-col font-sans bg-[#EBAF87] text-[#1F1714] overflow-x-hidden selection:bg-[#7C2928] selection:text-white">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TFBR93R9" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <!-- 1. Announcement Ticker Top Bar -->
+  <div
+    class="bg-[#521B18] text-white py-2.5 px-4 overflow-hidden border-b border-[#3E1311] relative z-40 text-xs sm:text-sm font-medium tracking-wide">
+    <div class="flex items-center justify-center">
+      <div class="animate-marquee whitespace-nowrap flex items-center gap-8">
+        <span class="flex items-center gap-2">
+          <span class="text-base">🎉</span> LIMITED OFFER: Master Practical SQL with 16 Core Units at Just ₹99 | Instant
+          PDF Download | 2026 Edition
+        </span>
+        <span class="text-white/40">✦</span>
+        <span class="flex items-center gap-2">
+          <span class="text-base">🚨</span> LIMITED OFFER: Master Practical SQL with 16 Core Units at Just ₹99 | Instant
+          PDF Download | 2026 Edition
+        </span>
+        <span class="text-white/40">✦</span>
+        <span class="flex items-center gap-2">
+          <span class="text-base">🎉</span> LIMITED OFFER: Master Practical SQL with 16 Core Units at Just ₹99 | Instant
+          PDF Download | 2026 Edition
+        </span>
+        <span class="text-white/40">✦</span>
+        <span class="flex items-center gap-2">
+          <span class="text-base">🚨</span> LIMITED OFFER: Master Practical SQL with 16 Core Units at Just ₹99 | Instant
+          PDF Download | 2026 Edition
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Sticky Header -->
+  <header id="site-header" class="sticky top-0 z-50 transition-all duration-300 bg-[#EBAF87] py-3">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 flex items-center justify-between">
+
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center gap-2 sm:gap-2.5 group shrink-0">
+        <div
+          class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-[#521B18] text-white flex items-center justify-center font-black shadow-md transition-transform group-hover:scale-105 border border-[#7C2928]">
+          <span class="text-base sm:text-lg">⚡</span>
+        </div>
+        <div class="flex flex-col leading-none">
+          <span class="text-base sm:text-xl font-black tracking-tight text-[#1F1714]">
+            SQL<span class="text-[#7C2928]">Mastery</span>
+          </span>
+          <span class="text-[9px] sm:text-[10px] font-bold text-[#521B18] uppercase tracking-wider">
+            2026 Practical Edition
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden lg:flex items-center gap-6 text-sm font-semibold text-[#1F1714]">
+        <a href="#hero" class="hover:text-[#7C2928] transition-colors py-1">Overview</a>
+        <a href="#offer" class="hover:text-[#7C2928] transition-colors py-1">Offer</a>
+        <a href="#sample-notes" class="hover:text-[#7C2928] transition-colors py-1">Sample Notes</a>
+        <a href="#why-need" class="hover:text-[#7C2928] transition-colors py-1">Why This Ebook</a>
+        <a href="#comparison" class="hover:text-[#7C2928] transition-colors py-1">Comparison</a>
+        <a href="#reviews" class="hover:text-[#7C2928] transition-colors py-1">Reviews</a>
+        <a href="#faq" class="hover:text-[#7C2928] transition-colors py-1">FAQ</a>
+      </nav>
+
+      <!-- Right Desktop Actions -->
+      <div class="hidden sm:flex items-center gap-2.5">
+        <button onclick="openSqlModal(0)"
+          class="flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white/90 hover:bg-white text-[#7C2928] border border-[#7C2928]/30 shadow-sm transition-all hover:scale-105"
+          title="Preview sample pages from the SQL Ebook">
+          <i class="bi bi-book text-base text-[#7C2928]"></i>
+          <span>Preview Sample Notes</span>
+        </button>
+
+        <a href="https://superprofile.bio/vp/6aa90df8ecf1df0013c2c708" target="_blank" rel="noopener noreferrer"
+          class="flex items-center gap-2 bg-[#7C2928] hover:bg-[#521B18] text-white px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl font-bold text-xs sm:text-sm shadow-md transition-all hover:scale-105 active:scale-95">
+          <i class="bi bi-bag-check text-base"></i>
+          <span>Get SQL Ebook ₹99</span>
+        </a>
+      </div>
+
+      <!-- Mobile Right Controls -->
+      <div class="flex sm:hidden items-center gap-2">
+        <button onclick="openSqlModal(0)"
+          class="flex items-center gap-1 px-2.5 py-1.5 min-h-[36px] rounded-lg text-[11px] font-bold bg-white text-[#7C2928] border border-[#7C2928]/30 shadow-sm active:scale-95"
+          aria-label="Preview sample notes">
+          <i class="bi bi-book text-xs"></i>
+          <span>Preview</span>
+        </button>
+
+        <a href="https://superprofile.bio/vp/6aa90df8ecf1df0013c2c708" target="_blank" rel="noopener noreferrer"
+          class="px-3 py-1.5 min-h-[36px] flex items-center justify-center rounded-lg text-xs font-black bg-[#7C2928] text-white shadow-sm active:scale-95"
+          aria-label="Buy SQL Ebook for 99 rupees">
+          ₹99
+        </a>
+
+        <button id="mobile-menu-btn"
+          class="p-2 min-w-[36px] min-h-[36px] flex items-center justify-center rounded-lg bg-[#521B18] text-white hover:bg-[#7C2928] transition-colors active:scale-95"
+          aria-label="Toggle navigation menu">
+          <i class="bi bi-list text-lg"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-drawer" class="hidden lg:hidden bg-[#F7E5D3] border-b border-[#D49F7B] px-5 py-4 shadow-xl">
+      <nav class="flex flex-col gap-1.5 font-semibold text-[#1F1714]">
+        <a href="#hero"
+          class="py-2.5 px-3 rounded-lg hover:bg-white/80 text-[#1F1714] hover:text-[#7C2928] transition-all text-sm font-bold min-h-[44px] flex items-center">Overview</a>
+        <a href="#offer"
+          class="py-2.5 px-3 rounded-lg hover:bg-white/80 text-[#1F1714] hover:text-[#7C2928] transition-all text-sm font-bold min-h-[44px] flex items-center">Offer</a>
+        <a href="#sample-notes"
+          class="py-2.5 px-3 rounded-lg hover:bg-white/80 text-[#1F1714] hover:text-[#7C2928] transition-all text-sm font-bold min-h-[44px] flex items-center">Sample
+          Notes</a>
+        <a href="#why-need"
+          class="py-2.5 px-3 rounded-lg hover:bg-white/80 text-[#1F1714] hover:text-[#7C2928] transition-all text-sm font-bold min-h-[44px] flex items-center">Why
+          This Ebook</a>
+        <a href="#comparison"
+          class="py-2.5 px-3 rounded-lg hover:bg-white/80 text-[#1F1714] hover:text-[#7C2928] transition-all text-sm font-bold min-h-[44px] flex items-center">Comparison</a>
+        <a href="#reviews"
+          class="py-2.5 px-3 rounded-lg hover:bg-white/80 text-[#1F1714] hover:text-[#7C2928] transition-all text-sm font-bold min-h-[44px] flex items-center">Reviews</a>
+        <a href="#faq"
+          class="py-2.5 px-3 rounded-lg hover:bg-white/80 text-[#1F1714] hover:text-[#7C2928] transition-all text-sm font-bold min-h-[44px] flex items-center">FAQ</a>
+
+        <div class="pt-3 border-t border-[#D49F7B]/50 flex flex-col gap-2">
+          <button onclick="openSqlModal(0)"
+            class="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold bg-white text-[#7C2928] border border-[#7C2928]/30 shadow-sm">
+            <i class="bi bi-book text-sm text-[#7C2928]"></i>
+            <span>Preview All 7 Sample Notes (Full-Screen)</span>
+          </button>
+
+          <a href="https://superprofile.bio/vp/6aa90df8ecf1df0013c2c708" target="_blank" rel="noopener noreferrer"
+            class="w-full flex items-center justify-center gap-2 bg-[#7C2928] text-white px-4 py-3 rounded-xl font-bold text-sm shadow-md active:scale-95">
+            <i class="bi bi-bag-check text-sm"></i>
+            <span>Get SQL Ebook ₹99</span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 3. Hero Section -->
+  <section id="hero" class="relative bg-[#EBAF87] overflow-hidden pt-6 pb-12 sm:py-16 lg:py-20">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-[#F4DDCB]/40 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-10 left-10 w-72 h-72 bg-[#7C2928]/10 rounded-full blur-2xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+
+        <!-- Left Hero Content -->
+        <div class="lg:col-span-6 flex flex-col items-start text-left">
+
+          <div class="inline-block mb-3">
+            <span
+              class="bg-[#521B18] text-white font-black text-xs sm:text-sm px-3.5 py-1.5 rounded-lg shadow-sm tracking-wider uppercase inline-flex items-center gap-1.5">
+              <span>⚡</span>
+              <span>2026 EDITION</span>
+            </span>
+          </div>
+
+          <h1 class="font-black text-[#1F1714] tracking-tight leading-[1.08] text-3xl sm:text-5xl md:text-6xl mb-6">
+            <span>PRACTICAL SQL</span>
+            <br />
+            <span class="text-[#7C2928]">NOTES & QUERIES</span>
+          </h1>
+
+          <div class="space-y-4 max-w-xl text-[#2D201A] font-medium text-base sm:text-lg leading-relaxed mb-8">
+            <p class="font-semibold text-[#1F1714] text-lg sm:text-xl">
+              Master SQL from Zero — Learn to Write Real SQL Queries with Confidence
+            </p>
+            <p class="text-[#3A2C25] leading-normal text-sm sm:text-base">
+              A beginner-friendly, practical SQL ebook designed to help students understand databases, write SQL
+              queries, work with tables, use JOINs, and apply constraints.
+            </p>
+            <p class="font-bold text-[#1F1714] text-base sm:text-lg flex items-center gap-2">
+              <span class="text-[#7C2928]">✦</span> 16 Core Units • Beginner Friendly • Practical Examples • 2026
+              Edition
+            </p>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-4 w-full sm:w-auto">
+            <a href="https://superprofile.bio/vp/6aa90df8ecf1df0013c2c708" target="_blank" rel="noopener noreferrer"
+              class="w-full sm:w-auto text-center inline-flex items-center justify-center gap-3 bg-[#521B18] hover:bg-[#7C2928] text-white text-base sm:text-lg font-bold px-8 py-4 rounded-xl shadow-lg transition-all duration-200 hover:scale-105 active:scale-95">
+              <span>Get SQL Ebook (₹99)</span>
+              <i class="bi bi-arrow-right text-lg"></i>
+            </a>
+
+            <button onclick="openSqlModal(0)"
+              class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/90 hover:bg-white text-[#7C2928] font-bold px-6 py-4 rounded-xl border border-[#7C2928]/30 shadow-md transition-all duration-200 hover:scale-105">
+              <i class="bi bi-eye text-lg"></i>
+              <span>Preview Sample Pages</span>
+            </button>
+          </div>
+
+          <div class="mt-8 flex flex-wrap items-center gap-4 text-xs sm:text-sm font-semibold text-[#4A392F]">
+            <div class="flex items-center gap-1.5">
+              <i class="bi bi-check-circle-fill text-[#7C2928]"></i>
+              <span>Instant PDF Download</span>
+            </div>
+            <span class="text-[#7C2928]/40">•</span>
+            <div class="flex items-center gap-1.5">
+              <i class="bi bi-check-circle-fill text-[#7C2928]"></i>
+              <span>Lifetime Access</span>
+            </div>
+            <span class="text-[#7C2928]/40">•</span>
+            <div class="flex items-center gap-1.5">
+              <i class="bi bi-check-circle-fill text-[#7C2928]"></i>
+              <span>Mobile & Print Friendly</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Hero: Realistic Paper Stack Note Sheet -->
+        <div class="lg:col-span-6 relative flex items-center justify-center mt-8 lg:mt-0">
+          <div
+            class="absolute w-72 h-72 sm:w-96 sm:h-96 md:w-[460px] md:h-[460px] rounded-full bg-[#87A2FF]/40 blur-xl transform -translate-x-4 translate-y-6 pointer-events-none">
+          </div>
+
+          <div onclick="openSqlModal(1)"
+            class="relative z-10 w-full max-w-[460px] cursor-pointer group transition-all duration-300 hover:scale-[1.02]"
+            title="Click to zoom and view full sample sheets">
+            <div
+              class="absolute -top-3 -right-3 w-full h-full bg-[#F7E5D3] rounded-2xl shadow-md border border-[#D49F7B]/60 transform rotate-2 pointer-events-none opacity-80">
+            </div>
+
+            <div class="relative bg-white rounded-2xl p-2.5 sm:p-3 shadow-2xl border-2 border-white/80 overflow-hidden">
+              <div
+                class="bg-[#7C2928] text-white px-3 py-1.5 rounded-lg mb-2 flex items-center justify-between text-xs font-bold">
+                <span class="flex items-center gap-1.5">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                  ACTUAL EBOOK SAMPLE PAGE
+                </span>
+                <span class="text-amber-200">UNIT 4 • 2026 EDITION</span>
+              </div>
+
+              <div class="relative w-full aspect-[1568/2400] rounded-lg overflow-hidden bg-neutral-50 shadow-inner">
+                <img src="assets/sql/02_sql_sublanguages.webp"
+                  alt="Original SQL Date and Time Data Types handwritten notes (Unit 4)"
+                  class="w-full h-full object-contain object-top transition-transform duration-500 group-hover:scale-105"
+                  loading="eager" />
+              </div>
+
+              <div
+                class="mt-2.5 pt-2 border-t border-neutral-100 flex items-center justify-between text-xs font-bold text-[#7C2928]">
+                <span class="flex items-center gap-1 text-[#1F1714]">
+                  <span>🔍</span> Tap or Click to View High-Res
+                </span>
+                <span
+                  class="bg-[#7C2928]/10 hover:bg-[#7C2928] hover:text-white px-2.5 py-1 rounded-md transition-colors">
+                  Preview All 7 Pages →
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Product Offer Section -->
+  <section id="offer" class="bg-[#EBAF87] py-10 sm:py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center mb-6 sm:mb-10">
+        <h2 class="text-2xl sm:text-4xl md:text-5xl font-extrabold text-[#1F1714] tracking-tight uppercase">
+          PRACTICAL SQL EBOOK – 2026 EDITION
+        </h2>
+      </div>
+
+      <div class="bg-[#F7E5D3] rounded-3xl border-2 border-[#E2BEA2]/60 shadow-xl overflow-hidden p-6 sm:p-8 lg:p-12">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+
+          <!-- Left Column: Unit 14 SQL Joins Concept -->
+          <div class="lg:col-span-6 flex justify-center items-center">
+            <div onclick="openSqlModal(4)"
+              class="w-full max-w-[440px] bg-white rounded-2xl p-3 shadow-2xl border-2 border-white/80 transition-all duration-300 hover:scale-[1.02] group cursor-pointer">
+              <div
+                class="bg-[#7C2928] text-white px-3 py-1.5 rounded-lg mb-2 flex items-center justify-between text-xs font-bold">
+                <span>UNIT 1: WHAT IS SQL? FOUNDATIONS</span>
+                <span class="text-amber-200">100% REAL NOTE</span>
+              </div>
+              <div class="relative w-full aspect-[1568/2400] rounded-lg overflow-hidden bg-neutral-50 shadow-inner">
+                <img src="assets/sql/05_sql_joins_concept.webp"
+                  alt="Complete original handwritten Unit 1: What is SQL? note sheet"
+                  class="w-full h-full object-contain object-top transition-transform duration-300 group-hover:scale-105"
+                  loading="lazy" />
+              </div>
+              <div class="mt-2 text-center text-xs font-bold text-[#7C2928]">
+                <span>📄 Complete Uncut Page from 16-Unit Ebook (Tap to View)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Offer Details -->
+          <div class="lg:col-span-6 flex flex-col items-start">
+            <h3 class="text-2xl sm:text-4xl font-extrabold text-[#1F1714] leading-tight mb-4">
+              Complete SQL & Database Mastery Ebook (16 Core Units)
+            </h3>
+
+            <!-- Price Row -->
+            <div class="flex items-baseline flex-wrap gap-2.5 sm:gap-3 mb-3">
+              <span class="text-xl sm:text-2xl line-through text-[#665348] font-medium">
+                ₹1,299.00
+              </span>
+              <span class="text-3xl sm:text-5xl font-extrabold text-[#7C2928]">
+                ₹99.00
+              </span>
+              <span
+                class="bg-[#7C2928]/15 text-[#7C2928] text-xs sm:text-sm font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">
+                Save 92%
+              </span>
+            </div>
+
+            <!-- Star Rating -->
+            <div class="flex items-center gap-2 mb-6">
+              <span class="text-[#E5A835] text-lg tracking-wider font-bold">★★★★★</span>
+              <span class="text-sm font-bold text-[#4A392F]">
+                (4.9/5 - 2,400+ Tech Students)
+              </span>
+            </div>
+
+            <!-- Feature Bullets -->
+            <ul class="space-y-3.5 mb-8 w-full">
+              <li class="flex items-start gap-3 text-[#2D201A] font-semibold text-sm sm:text-base">
+                <i class="bi bi-check-circle-fill text-[#7C2928] text-lg shrink-0 mt-0.5"></i>
+                <span>Instant High-Res PDF Download</span>
+              </li>
+              <li class="flex items-start gap-3 text-[#2D201A] font-semibold text-sm sm:text-base">
+                <i class="bi bi-check-circle-fill text-[#7C2928] text-lg shrink-0 mt-0.5"></i>
+                <span>Covers All 16 Core Units (SELECT, JOINs, Constraints, DDL/DML)</span>
+              </li>
+              <li class="flex items-start gap-3 text-[#2D201A] font-semibold text-sm sm:text-base">
+                <i class="bi bi-check-circle-fill text-[#7C2928] text-lg shrink-0 mt-0.5"></i>
+                <span>Illustrated Hand-Drawn Mind Maps & Schema Diagrams</span>
+              </li>
+              <li class="flex items-start gap-3 text-[#2D201A] font-semibold text-sm sm:text-base">
+                <i class="bi bi-check-circle-fill text-[#7C2928] text-lg shrink-0 mt-0.5"></i>
+                <span>Includes Practical Interview & Exam Questions</span>
+              </li>
+              <li class="flex items-start gap-3 text-[#2D201A] font-semibold text-sm sm:text-base">
+                <i class="bi bi-check-circle-fill text-[#7C2928] text-lg shrink-0 mt-0.5"></i>
+                <span>100% Secure Payment Gateway</span>
+              </li>
+              <li class="flex items-start gap-3 text-[#2D201A] font-semibold text-sm sm:text-base">
+                <i class="bi bi-check-circle-fill text-[#7C2928] text-lg shrink-0 mt-0.5"></i>
+                <span>Lifetime Access & Free 2026 Edition Updates</span>
+              </li>
+              <li class="flex items-start gap-3 text-[#2D201A] font-semibold text-sm sm:text-base">
+                <i class="bi bi-check-circle-fill text-[#7C2928] text-lg shrink-0 mt-0.5"></i>
+                <span>Mobile, Tablet, Laptop & Printable Format</span>
+              </li>
+            </ul>
+
+            <!-- Buy Now CTA -->
+            <div class="w-full space-y-4">
+              <a href="https://superprofile.bio/vp/6aa90df8ecf1df0013c2c708" target="_blank" rel="noopener noreferrer"
+                class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#7C2928] hover:bg-[#521B18] text-white text-lg font-bold px-10 py-4 rounded-xl shadow-lg transition-all duration-200 hover:scale-102 active:scale-98">
+                <i class="bi bi-lightning-charge-fill text-xl"></i>
+                <span>Buy Now (₹99)</span>
+              </a>
+
+              <div class="pt-2">
+                <div class="relative w-72 sm:w-80 h-14">
+                  <img src="assets/payment_icons.png"
+                    alt="Accepted Payments: Paytm, PhonePe, BHIM UPI, GPay, NetBanking, Cards"
+                    class="w-full h-full object-contain object-left" />
+                </div>
+                <div class="flex items-center gap-2 mt-1 text-xs text-[#6B574C] font-medium">
+                  <i class="bi bi-shield-check text-[#16A34A] text-base"></i>
+                  <span>256-Bit SSL Encrypted Instant & Secure Checkout</span>
+                </div>
+
+                <!-- Fast Checkout Reassurance Badges -->
+                <div
+                  class="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-2 pt-3 border-t border-[#D49F7B]/40 text-xs font-bold text-[#1F1714]">
+                  <div class="flex items-center gap-2">
+                    <i class="bi bi-lightning-charge-fill text-amber-600 text-sm"></i>
+                    <span>Instant UPI / Cards</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <i class="bi bi-file-earmark-arrow-down-fill text-emerald-700 text-sm"></i>
+                    <span>Direct PDF Download</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <i class="bi bi-whatsapp text-[#16A34A] text-sm"></i>
+                    <span>Email &amp; WhatsApp Copy</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 6. Urgency & Value Section -->
+  <section class="bg-[#EBAF87] py-8 sm:py-14">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-white rounded-3xl p-6 sm:p-10 lg:p-14 shadow-xl border border-[#E2BEA2]/80">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+
+          <div class="lg:col-span-6 flex flex-col items-start text-left">
+            <div class="flex items-center gap-2.5 mb-2">
+              <span class="text-3xl sm:text-4xl">🎯</span>
+              <h2 class="text-2xl sm:text-4xl md:text-5xl font-extrabold text-[#1F1714] leading-tight">
+                One Small Investment Today.
+              </h2>
+            </div>
+
+            <h3 class="text-2xl sm:text-4xl md:text-5xl font-extrabold text-[#7C2928] leading-tight mb-6">
+              A Huge Career Advantage Tomorrow.
+            </h3>
+
+            <p class="text-[#3E2E25] text-base sm:text-lg font-medium leading-relaxed mb-4">
+              For less than the price of a cup of coffee, get a complete 16-Unit Practical SQL Study Kit that takes you
+              step-by-step from database basics to multi-table JOINs and real-world queries.
+            </p>
+
+            <p class="text-[#1F1714] font-bold text-base sm:text-lg leading-relaxed mb-6">
+              Why spend ₹99.00 on a single snack when you can invest in a lifelong tech & data skill?
+            </p>
+
+            <div class="w-full pt-2">
+              <h4 class="text-base sm:text-lg font-extrabold text-[#1F1714] mb-3">
+                Why Students & Aspirants Choose This Ebook:
+              </h4>
+
+              <ul class="space-y-3">
+                <li class="flex items-start gap-3 text-[#2D201A] font-semibold text-sm sm:text-base">
+                  <i class="bi bi-check-circle-fill text-[#7C2928] text-lg shrink-0 mt-0.5"></i>
+                  <span>₹99 – One-Time Investment, Lifetime Learning Access</span>
+                </li>
+                <li class="flex items-start gap-3 text-[#2D201A] font-semibold text-sm sm:text-base">
+                  <i class="bi bi-check-circle-fill text-[#7C2928] text-lg shrink-0 mt-0.5"></i>
+                  <span>16 Carefully Organized Units with ER & Venn Diagrams</span>
+                </li>
+                <li class="flex items-start gap-3 text-[#2D201A] font-semibold text-sm sm:text-base">
+                  <i class="bi bi-check-circle-fill text-[#7C2928] text-lg shrink-0 mt-0.5"></i>
+                  <span>Covers Relational Joins, Constraints, DDL, DML & DAL</span>
+                </li>
+                <li class="flex items-start gap-3 text-[#2D201A] font-semibold text-sm sm:text-base">
+                  <i class="bi bi-check-circle-fill text-[#7C2928] text-lg shrink-0 mt-0.5"></i>
+                  <span>Trusted by College Students, BCA/BTech & Data Aspirants</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="mt-8">
+              <a href="https://superprofile.bio/vp/6aa90df8ecf1df0013c2c708" target="_blank" rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 bg-[#7C2928] hover:bg-[#521B18] text-white font-bold text-sm sm:text-base px-7 py-3.5 rounded-xl shadow-md transition-all hover:scale-105 active:scale-95">
+                Invest in Success Now (₹99)
+              </a>
+            </div>
+          </div>
+
+          <div class="lg:col-span-6 flex justify-center items-center">
+            <div
+              class="relative w-full max-w-[560px] aspect-[7/8] sm:aspect-[4/5] drop-shadow-lg transition-transform duration-300 hover:scale-102">
+              <img src="assets/urgency_visual.webp" alt="COMPLETE 16-UNIT PRACTICAL SQL EBOOK AT JUST ₹99!"
+                class="w-full h-full object-contain" loading="lazy" />
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Why You Need This SQL Ebook -->
+  <section id="why-need" class="bg-[#EBAF87] py-12 sm:py-18">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-5xl font-extrabold text-center text-[#1F1714] mb-12 tracking-tight">
+        Why You Need This SQL Ebook?
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+        <!-- Card 1 -->
+        <div
+          class="bg-[#E5A882]/85 hover:bg-[#E5A882] rounded-3xl p-6 sm:p-8 border border-[#D49572]/60 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="text-2xl">📘</span>
+            <h3 class="text-xl sm:text-2xl font-extrabold text-[#1F1714]">Smart Visual Notes in 2–3 Pages</h3>
+          </div>
+          <p class="text-[#3A2A22] font-semibold text-sm sm:text-base leading-relaxed mb-5">
+            Complex database concepts explained with visual diagrams and intuitive party metaphors.
+          </p>
+          <ul class="space-y-2.5">
+            <li class="flex items-start gap-2.5 text-xs sm:text-sm font-semibold text-[#221814]">
+              <i class="bi bi-check-circle-fill text-[#7C2928] text-base shrink-0 mt-0.5"></i>
+              <span>Understand the "why", not just the command syntax</span>
+            </li>
+            <li class="flex items-start gap-2.5 text-xs sm:text-sm font-semibold text-[#221814]">
+              <i class="bi bi-check-circle-fill text-[#7C2928] text-base shrink-0 mt-0.5"></i>
+              <span>ER diagrams and table relationships clearly illustrated</span>
+            </li>
+            <li class="flex items-start gap-2.5 text-xs sm:text-sm font-semibold text-[#221814]">
+              <i class="bi bi-check-circle-fill text-[#7C2928] text-base shrink-0 mt-0.5"></i>
+              <span>Easy-to-follow query breakdown step-by-step</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Card 2 -->
+        <div
+          class="bg-[#E5A882]/85 hover:bg-[#E5A882] rounded-3xl p-6 sm:p-8 border border-[#D49572]/60 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="text-2xl">🗺️</span>
+            <h3 class="text-xl sm:text-2xl font-extrabold text-[#1F1714]">Master JOINs & Multi-Table Queries</h3>
+          </div>
+          <p class="text-[#3A2A22] font-semibold text-sm sm:text-base leading-relaxed mb-5">
+            Unit 14 dedicated guide to INNER, LEFT, RIGHT, FULL & CROSS JOINs with Venn diagrams.
+          </p>
+          <ul class="space-y-2.5">
+            <li class="flex items-start gap-2.5 text-xs sm:text-sm font-semibold text-[#221814]">
+              <i class="bi bi-check-circle-fill text-[#7C2928] text-base shrink-0 mt-0.5"></i>
+              <span>Real-world customer & order table examples</span>
+            </li>
+            <li class="flex items-start gap-2.5 text-xs sm:text-sm font-semibold text-[#221814]">
+              <i class="bi bi-check-circle-fill text-[#7C2928] text-base shrink-0 mt-0.5"></i>
+              <span>The Anti-Join pattern with IS NULL explained</span>
+            </li>
+            <li class="flex items-start gap-2.5 text-xs sm:text-sm font-semibold text-[#221814]">
+              <i class="bi bi-check-circle-fill text-[#7C2928] text-base shrink-0 mt-0.5"></i>
+              <span>Party metaphor that makes JOIN logic click forever</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Card 3 -->
+        <div
+          class="bg-[#E5A882]/85 hover:bg-[#E5A882] rounded-3xl p-6 sm:p-8 border border-[#D49572]/60 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="text-2xl">📚</span>
+            <h3 class="text-xl sm:text-2xl font-extrabold text-[#1F1714]">Logical Query Processing Order</h3>
+          </div>
+          <p class="text-[#3A2A22] font-semibold text-sm sm:text-base leading-relaxed mb-5">
+            Learn the exact order database engines process clauses: FROM → WHERE → GROUP BY → HAVING → SELECT → ORDER
+            BY.
+          </p>
+          <ul class="space-y-2.5">
+            <li class="flex items-start gap-2.5 text-xs sm:text-sm font-semibold text-[#221814]">
+              <i class="bi bi-check-circle-fill text-[#7C2928] text-base shrink-0 mt-0.5"></i>
+              <span>Avoid common mistakes with column aliases</span>
+            </li>
+            <li class="flex items-start gap-2.5 text-xs sm:text-sm font-semibold text-[#221814]">
+              <i class="bi bi-check-circle-fill text-[#7C2928] text-base shrink-0 mt-0.5"></i>
+              <span>Understand why WHERE runs before SELECT</span>
+            </li>
+            <li class="flex items-start gap-2.5 text-xs sm:text-sm font-semibold text-[#221814]">
+              <i class="bi bi-check-circle-fill text-[#7C2928] text-base shrink-0 mt-0.5"></i>
+              <span>Performance optimization tips for beginners</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Card 4 -->
+        <div
+          class="bg-[#E5A882]/85 hover:bg-[#E5A882] rounded-3xl p-6 sm:p-8 border border-[#D49572]/60 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="text-2xl">📑</span>
+            <h3 class="text-xl sm:text-2xl font-extrabold text-[#1F1714]">Constraints & Data Integrity</h3>
+          </div>
+          <p class="text-[#3A2A22] font-semibold text-sm sm:text-base leading-relaxed mb-5">
+            High-yield exam & interview topic: PRIMARY KEY, FOREIGN KEY, UNIQUE, NOT NULL, CHECK, DEFAULT.
+          </p>
+          <ul class="space-y-2.5">
+            <li class="flex items-start gap-2.5 text-xs sm:text-sm font-semibold text-[#221814]">
+              <i class="bi bi-check-circle-fill text-[#7C2928] text-base shrink-0 mt-0.5"></i>
+              <span>Understand table relationships and referential integrity</span>
+            </li>
+            <li class="flex items-start gap-2.5 text-xs sm:text-sm font-semibold text-[#221814]">
+              <i class="bi bi-check-circle-fill text-[#7C2928] text-base shrink-0 mt-0.5"></i>
+              <span>Proper handling of NULL values vs zero/empty strings</span>
+            </li>
+            <li class="flex items-start gap-2.5 text-xs sm:text-sm font-semibold text-[#221814]">
+              <i class="bi bi-check-circle-fill text-[#7C2928] text-base shrink-0 mt-0.5"></i>
+              <span>DDL, DML and Data Administration sublanguages</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Card 5 -->
+        <div
+          class="bg-[#E5A882]/85 hover:bg-[#E5A882] rounded-3xl p-6 sm:p-8 border border-[#D49572]/60 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="text-2xl">📝</span>
+            <h3 class="text-xl sm:text-2xl font-extrabold text-[#1F1714]">Exam & Interview Focused</h3>
+          </div>
+          <p class="text-[#3A2A22] font-semibold text-sm sm:text-base leading-relaxed mb-5">
+            Designed specifically for BCA, B.Tech, MCA, BSc IT students and tech interview preparation.
+          </p>
+          <ul class="space-y-2.5">
+            <li class="flex items-start gap-2.5 text-xs sm:text-sm font-semibold text-[#221814]">
+              <i class="bi bi-check-circle-fill text-[#7C2928] text-base shrink-0 mt-0.5"></i>
+              <span>Covers Codd's Relational Model history & ANSI standards</span>
+            </li>
+            <li class="flex items-start gap-2.5 text-xs sm:text-sm font-semibold text-[#221814]">
+              <i class="bi bi-check-circle-fill text-[#7C2928] text-base shrink-0 mt-0.5"></i>
+              <span>Frequently tested database theory & practical syntax</span>
+            </li>
+            <li class="flex items-start gap-2.5 text-xs sm:text-sm font-semibold text-[#221814]">
+              <i class="bi bi-check-circle-fill text-[#7C2928] text-base shrink-0 mt-0.5"></i>
+              <span>Clear query questions with step-by-step solutions</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Card 6 -->
+        <div
+          class="bg-[#E5A882]/85 hover:bg-[#E5A882] rounded-3xl p-6 sm:p-8 border border-[#D49572]/60 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="text-2xl">🚀</span>
+            <h3 class="text-xl sm:text-2xl font-extrabold text-[#1F1714]">Career & Analytics Foundation</h3>
+          </div>
+          <p class="text-[#3A2A22] font-semibold text-sm sm:text-base leading-relaxed mb-5">
+            Build the foundational database knowledge needed before Excel, Power BI, Python or backend dev.
+          </p>
+          <ul class="space-y-2.5">
+            <li class="flex items-start gap-2.5 text-xs sm:text-sm font-semibold text-[#221814]">
+              <i class="bi bi-check-circle-fill text-[#7C2928] text-base shrink-0 mt-0.5"></i>
+              <span>Essential for Software Engineering & Full-Stack tracks</span>
+            </li>
+            <li class="flex items-start gap-2.5 text-xs sm:text-sm font-semibold text-[#221814]">
+              <i class="bi bi-check-circle-fill text-[#7C2928] text-base shrink-0 mt-0.5"></i>
+              <span>Direct application to Data Analyst & BI roles</span>
+            </li>
+            <li class="flex items-start gap-2.5 text-xs sm:text-sm font-semibold text-[#221814]">
+              <i class="bi bi-check-circle-fill text-[#7C2928] text-base shrink-0 mt-0.5"></i>
+              <span>Modern 2026 database architecture context</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- 9. Look Inside: Real Handwritten Visual Notes -->
+  <section id="sample-notes" class="bg-[#EBAF87] py-12 sm:py-20 border-t border-[#D49F7B]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
+        <div
+          class="inline-flex items-center gap-2 bg-[#7C2928] text-white px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold shadow-md mb-4 uppercase tracking-wider">
+          <i class="bi bi-stars text-amber-300"></i>
+          <span>100% Genuine Notes Preview</span>
+        </div>
+
+        <h2 class="text-3xl sm:text-5xl font-black text-[#1F1714] tracking-tight leading-tight mb-4">
+          Look Inside: Real Handwritten Visual Notes
+        </h2>
+
+        <p class="text-base sm:text-lg font-semibold text-[#3A2D26]">
+          Don't just take our word for it. Inspect the actual complete sample pages below from our 2026 edition. Every
+          single topic is broken down with color-coded diagrams, clear handwriting, and intuitive real-world metaphors.
+        </p>
+      </div>
+
+      <!-- Tab Selector Buttons -->
+      <div class="flex items-center gap-2 sm:gap-3 overflow-x-auto pb-4 mb-8 no-scrollbar scroll-smooth">
+        <button data-index="0"
+          class="sample-tab-btn shrink-0 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 flex items-center gap-2 shadow-sm bg-white/90 text-[#1F1714]">
+          <i class="tab-icon bi bi-book text-sm text-[#7C2928]"></i>
+          <span>Unit 13: SQL Insert</span>
+          <span class="tab-tag text-[10px] px-1.5 py-0.5 rounded-md bg-[#7C2928]/10 text-[#7C2928]">DML Core</span>
+        </button>
+        <button data-index="1"
+          class="sample-tab-btn shrink-0 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 flex items-center gap-2 shadow-sm bg-white/90 text-[#1F1714]">
+          <i class="tab-icon bi bi-book text-sm text-[#7C2928]"></i>
+          <span>Unit 4: Date &amp; Time</span>
+          <span class="tab-tag text-[10px] px-1.5 py-0.5 rounded-md bg-[#7C2928]/10 text-[#7C2928]">Exam Favorite</span>
+        </button>
+        <button data-index="2"
+          class="sample-tab-btn shrink-0 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 flex items-center gap-2 shadow-sm bg-white/90 text-[#1F1714]">
+          <i class="tab-icon bi bi-book text-sm text-[#7C2928]"></i>
+          <span>Unit 13: Advanced Insert</span>
+          <span class="tab-tag text-[10px] px-1.5 py-0.5 rounded-md bg-[#7C2928]/10 text-[#7C2928]">2026 Updates</span>
+        </button>
+        <button data-index="3"
+          class="sample-tab-btn shrink-0 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 flex items-center gap-2 shadow-sm bg-white/90 text-[#1F1714]">
+          <i class="tab-icon bi bi-book text-sm text-[#7C2928]"></i>
+          <span>Unit 14: Joins Overview</span>
+          <span class="tab-tag text-[10px] px-1.5 py-0.5 rounded-md bg-[#7C2928]/10 text-[#7C2928]">Core Concept</span>
+        </button>
+        <button data-index="4"
+          class="sample-tab-btn shrink-0 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 flex items-center gap-2 shadow-sm bg-white/90 text-[#1F1714]">
+          <i class="tab-icon bi bi-book text-sm text-[#7C2928]"></i>
+          <span>Unit 1: What is SQL?</span>
+          <span class="tab-tag text-[10px] px-1.5 py-0.5 rounded-md bg-[#7C2928]/10 text-[#7C2928]">Core
+            Foundation</span>
+        </button>
+        <button data-index="5"
+          class="sample-tab-btn shrink-0 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 flex items-center gap-2 shadow-sm bg-white/90 text-[#1F1714]">
+          <i class="tab-icon bi bi-book text-sm text-[#7C2928]"></i>
+          <span>Unit 14: Joins Comparison</span>
+          <span class="tab-tag text-[10px] px-1.5 py-0.5 rounded-md bg-[#7C2928]/10 text-[#7C2928]">Exam Summary</span>
+        </button>
+        <button data-index="6"
+          class="sample-tab-btn shrink-0 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 flex items-center gap-2 shadow-sm bg-white/90 text-[#1F1714]">
+          <i class="tab-icon bi bi-book text-sm text-[#7C2928]"></i>
+          <span>Unit 14: LEFT OUTER JOIN</span>
+          <span class="tab-tag text-[10px] px-1.5 py-0.5 rounded-md bg-[#7C2928]/10 text-[#7C2928]">Anti-Join
+            Pattern</span>
+        </button>
+      </div>
+
+      <!-- Main Display Box -->
+      <div class="bg-[#F7E5D3] rounded-3xl border-2 border-[#E2BEA2] p-4 sm:p-8 lg:p-10 shadow-2xl">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+
+          <!-- Left Column: Note Sheet Card -->
+          <div class="lg:col-span-6 flex flex-col items-center">
+            <div onclick="openSqlModal(window.activeSampleTab || 0)"
+              class="w-full max-w-[480px] bg-white rounded-2xl p-2.5 sm:p-4 shadow-2xl border-2 border-white/80 cursor-pointer group relative transition-all duration-300 hover:scale-[1.01]"
+              title="Click to view full-resolution zoom">
+              <div
+                class="bg-[#7C2928] text-white px-3 py-1.5 rounded-lg mb-2 flex items-center justify-between text-xs font-bold">
+                <span id="sample-sheet-badge">UNIT 13 • DML COMMANDS</span>
+                <span id="sample-sheet-page-indicator" class="text-amber-200">PAGE 1 OF 7</span>
+              </div>
+
+              <div class="relative w-full aspect-[1568/2450] rounded-lg overflow-hidden bg-neutral-100 shadow-inner">
+                <img id="sample-sheet-img" src="assets/sql/01_what_is_sql.webp" alt="SQL Sample Sheet"
+                  class="w-full h-full object-contain object-top transition-transform duration-500 group-hover:scale-105" />
+
+                <div
+                  class="absolute bottom-3 right-3 bg-[#1F1714]/85 hover:bg-[#7C2928] text-white text-xs font-bold px-3 py-1.5 rounded-lg backdrop-blur-sm shadow-md flex items-center gap-1.5 transition-colors">
+                  <i class="bi bi-arrows-fullscreen text-xs"></i>
+                  <span>Zoom Full-Screen</span>
+                </div>
+              </div>
+
+              <div class="mt-2.5 flex items-center justify-between text-xs font-bold text-[#7C2928] px-1">
+                <span>✨ 100% Complete Original Sheet</span>
+                <span class="text-[#1F1714] group-hover:text-[#7C2928]">Tap image to expand ↗</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Note Sheet Details -->
+          <div class="lg:col-span-6 flex flex-col items-start text-left">
+            <div id="sample-details-badge"
+              class="inline-block bg-[#7C2928]/15 text-[#7C2928] text-xs font-extrabold px-3 py-1 rounded-md mb-2 uppercase tracking-wide">
+              UNIT 13 • DML COMMANDS
+            </div>
+
+            <h3 id="sample-details-title" class="text-2xl sm:text-4xl font-extrabold text-[#1F1714] leading-tight mb-3">
+              The Two Core Syntax Forms: Safe vs Terse INSERT
+            </h3>
+
+            <p class="text-sm sm:text-base font-semibold text-[#5A4B43] mb-6">
+              This sheet gives you immediate conceptual clarity without requiring hours of confusing video lectures.
+              Look at the structured format:
+            </p>
+
+            <div id="sample-details-bullets" class="w-full space-y-3.5 mb-8">
+              <!-- Rendered dynamically by main.js -->
+            </div>
+
+            <div class="w-full bg-[#7C2928]/10 rounded-2xl p-4 border border-[#7C2928]/20 mb-6 flex items-center gap-3">
+              <i class="bi bi-shield-check text-3xl text-[#7C2928] shrink-0"></i>
+              <div class="text-xs sm:text-sm font-semibold text-[#3A2D26]">
+                <strong class="text-[#1F1714] block font-bold">16 Core Units in Full High-Resolution PDF</strong>
+                Instant download to your device immediately after payment.
+              </div>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-3 w-full sm:w-auto">
+              <a href="https://superprofile.bio/vp/6aa90df8ecf1df0013c2c708" target="_blank" rel="noopener noreferrer"
+                class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#7C2928] hover:bg-[#521B18] text-white font-extrabold text-sm sm:text-base px-7 py-3.5 rounded-xl shadow-lg transition-all hover:scale-105 active:scale-95">
+                <i class="bi bi-download text-sm"></i>
+                <span>Get Complete Ebook (₹99)</span>
+              </a>
+
+              <button onclick="openSqlModal(window.activeSampleTab || 0)"
+                class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white text-[#7C2928] border border-[#7C2928]/30 font-bold text-sm sm:text-base px-5 py-3.5 rounded-xl shadow-sm hover:bg-neutral-50 transition-all">
+                <i class="bi bi-eye text-sm"></i>
+                <span>Read Full Page (High-Res)</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Thumbnail Selector Strip -->
+      <div class="mt-10 relative">
+        <div class="text-center mb-5">
+          <p
+            class="text-sm sm:text-base font-black text-[#1F1714] tracking-wide uppercase flex items-center justify-center gap-2">
+            <span>📖</span>
+            <span>SELECT ANY SHEET TO PREVIEW ORIGINAL CONTENT:</span>
+          </p>
+          <p class="text-xs sm:text-sm font-semibold text-[#5A4B43] mt-1">
+            Hover or tap any sheet to inspect complete full-size notes
+          </p>
+        </div>
+
+        <div class="relative max-w-5xl mx-auto px-2 sm:px-8">
+          <!-- Left Scroll Button -->
+          <button id="thumb-scroll-left" type="button"
+            class="hidden sm:flex absolute left-0 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-white text-[#7C2928] border border-[#7C2928]/30 shadow-lg items-center justify-center hover:bg-[#7C2928] hover:text-white transition-all active:scale-90 cursor-pointer"
+            aria-label="Scroll left">
+            <i class="bi bi-chevron-left text-sm font-bold"></i>
+          </button>
+
+          <!-- Right Scroll Button -->
+          <button id="thumb-scroll-right" type="button"
+            class="hidden sm:flex absolute right-0 top-1/2 -translate-y-1/2 z-20 w-9 h-9 rounded-full bg-white text-[#7C2928] border border-[#7C2928]/30 shadow-lg items-center justify-center hover:bg-[#7C2928] hover:text-white transition-all active:scale-90 cursor-pointer"
+            aria-label="Scroll right">
+            <i class="bi bi-chevron-right text-sm font-bold"></i>
+          </button>
+
+          <!-- Thumbnails Scroll Container -->
+          <div id="sample-thumbs-container"
+            class="flex items-stretch justify-start sm:justify-center gap-3 sm:gap-4 overflow-x-auto py-3 px-1 scroll-smooth no-scrollbar">
+
+            <!-- Sheet 1 -->
+            <button data-index="0"
+              class="sample-thumb-btn group relative w-24 sm:w-28 md:w-32 shrink-0 rounded-2xl overflow-hidden border-2 transition-all duration-200 p-1.5 bg-white shadow-md border-white/80 opacity-90 hover:opacity-100 hover:scale-105 hover:shadow-xl hover:border-[#7C2928] text-center cursor-pointer flex flex-col justify-between"
+              title="Unit 13: SQL Insert Statements">
+              <div
+                class="relative w-full aspect-[1568/2200] rounded-xl overflow-hidden bg-neutral-100 border border-neutral-200">
+                <img src="assets/sql/01_what_is_sql.webp" alt="Sheet 1 - Unit 13: SQL Insert Statements"
+                  class="w-full h-full object-contain object-top transition-transform duration-300 group-hover:scale-108"
+                  loading="lazy" />
+                <div
+                  class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white text-center p-1 rounded-xl">
+                  <i class="bi bi-eye-fill text-lg mb-0.5 text-amber-300"></i>
+                  <span class="text-[10px] font-extrabold leading-tight">View Full</span>
+                </div>
+              </div>
+              <div class="mt-2 text-center">
+                <p class="text-xs sm:text-sm font-black text-[#1F1714] truncate">Sheet 1</p>
+                <span
+                  class="mt-1 inline-flex items-center justify-center gap-1 text-[9px] font-bold text-[#7C2928] bg-[#FAF0E9] py-0.5 px-2 rounded-md border border-[#7C2928]/15 group-hover:bg-[#7C2928] group-hover:text-white transition-colors">
+                  <i class="bi bi-arrows-fullscreen text-[8px]"></i>
+                  <span>Open ↗</span>
+                </span>
+              </div>
+            </button>
+
+            <!-- Sheet 2 -->
+            <button data-index="1"
+              class="sample-thumb-btn group relative w-24 sm:w-28 md:w-32 shrink-0 rounded-2xl overflow-hidden border-2 transition-all duration-200 p-1.5 bg-white shadow-md border-white/80 opacity-90 hover:opacity-100 hover:scale-105 hover:shadow-xl hover:border-[#7C2928] text-center cursor-pointer flex flex-col justify-between"
+              title="Unit 4: Date &amp; Time Data Types">
+              <div
+                class="relative w-full aspect-[1568/2200] rounded-xl overflow-hidden bg-neutral-100 border border-neutral-200">
+                <img src="assets/sql/02_sql_sublanguages.webp" alt="Sheet 2 - Unit 4: Date &amp; Time Data Types"
+                  class="w-full h-full object-contain object-top transition-transform duration-300 group-hover:scale-108"
+                  loading="lazy" />
+                <div
+                  class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white text-center p-1 rounded-xl">
+                  <i class="bi bi-eye-fill text-lg mb-0.5 text-amber-300"></i>
+                  <span class="text-[10px] font-extrabold leading-tight">View Full</span>
+                </div>
+              </div>
+              <div class="mt-2 text-center">
+                <p class="text-xs sm:text-sm font-black text-[#1F1714] truncate">Sheet 2</p>
+                <span
+                  class="mt-1 inline-flex items-center justify-center gap-1 text-[9px] font-bold text-[#7C2928] bg-[#FAF0E9] py-0.5 px-2 rounded-md border border-[#7C2928]/15 group-hover:bg-[#7C2928] group-hover:text-white transition-colors">
+                  <i class="bi bi-arrows-fullscreen text-[8px]"></i>
+                  <span>Open ↗</span>
+                </span>
+              </div>
+            </button>
+
+            <!-- Sheet 3 -->
+            <button data-index="2"
+              class="sample-thumb-btn group relative w-24 sm:w-28 md:w-32 shrink-0 rounded-2xl overflow-hidden border-2 transition-all duration-200 p-1.5 bg-white shadow-md border-white/80 opacity-90 hover:opacity-100 hover:scale-105 hover:shadow-xl hover:border-[#7C2928] text-center cursor-pointer flex flex-col justify-between"
+              title="Unit 13: Advanced INSERT Patterns">
+              <div
+                class="relative w-full aspect-[1568/2200] rounded-xl overflow-hidden bg-neutral-100 border border-neutral-200">
+                <img src="assets/sql/03_core_concepts_constraints.webp"
+                  alt="Sheet 3 - Unit 13: Advanced INSERT Patterns"
+                  class="w-full h-full object-contain object-top transition-transform duration-300 group-hover:scale-108"
+                  loading="lazy" />
+                <div
+                  class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white text-center p-1 rounded-xl">
+                  <i class="bi bi-eye-fill text-lg mb-0.5 text-amber-300"></i>
+                  <span class="text-[10px] font-extrabold leading-tight">View Full</span>
+                </div>
+              </div>
+              <div class="mt-2 text-center">
+                <p class="text-xs sm:text-sm font-black text-[#1F1714] truncate">Sheet 3</p>
+                <span
+                  class="mt-1 inline-flex items-center justify-center gap-1 text-[9px] font-bold text-[#7C2928] bg-[#FAF0E9] py-0.5 px-2 rounded-md border border-[#7C2928]/15 group-hover:bg-[#7C2928] group-hover:text-white transition-colors">
+                  <i class="bi bi-arrows-fullscreen text-[8px]"></i>
+                  <span>Open ↗</span>
+                </span>
+              </div>
+            </button>
+
+            <!-- Sheet 4 -->
+            <button data-index="3"
+              class="sample-thumb-btn group relative w-24 sm:w-28 md:w-32 shrink-0 rounded-2xl overflow-hidden border-2 transition-all duration-200 p-1.5 bg-white shadow-md border-white/80 opacity-90 hover:opacity-100 hover:scale-105 hover:shadow-xl hover:border-[#7C2928] text-center cursor-pointer flex flex-col justify-between"
+              title="Unit 14: SQL Joins Overview">
+              <div
+                class="relative w-full aspect-[1568/2200] rounded-xl overflow-hidden bg-neutral-100 border border-neutral-200">
+                <img src="assets/sql/04_query_processing_select.webp" alt="Sheet 4 - Unit 14: SQL Joins Overview"
+                  class="w-full h-full object-contain object-top transition-transform duration-300 group-hover:scale-108"
+                  loading="lazy" />
+                <div
+                  class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white text-center p-1 rounded-xl">
+                  <i class="bi bi-eye-fill text-lg mb-0.5 text-amber-300"></i>
+                  <span class="text-[10px] font-extrabold leading-tight">View Full</span>
+                </div>
+              </div>
+              <div class="mt-2 text-center">
+                <p class="text-xs sm:text-sm font-black text-[#1F1714] truncate">Sheet 4</p>
+                <span
+                  class="mt-1 inline-flex items-center justify-center gap-1 text-[9px] font-bold text-[#7C2928] bg-[#FAF0E9] py-0.5 px-2 rounded-md border border-[#7C2928]/15 group-hover:bg-[#7C2928] group-hover:text-white transition-colors">
+                  <i class="bi bi-arrows-fullscreen text-[8px]"></i>
+                  <span>Open ↗</span>
+                </span>
+              </div>
+            </button>
+
+            <!-- Sheet 5 -->
+            <button data-index="4"
+              class="sample-thumb-btn group relative w-24 sm:w-28 md:w-32 shrink-0 rounded-2xl overflow-hidden border-2 transition-all duration-200 p-1.5 bg-white shadow-md border-white/80 opacity-90 hover:opacity-100 hover:scale-105 hover:shadow-xl hover:border-[#7C2928] text-center cursor-pointer flex flex-col justify-between"
+              title="Unit 1: What is SQL?">
+              <div
+                class="relative w-full aspect-[1568/2200] rounded-xl overflow-hidden bg-neutral-100 border border-neutral-200">
+                <img src="assets/sql/05_sql_joins_concept.webp" alt="Sheet 5 - Unit 1: What is SQL?"
+                  class="w-full h-full object-contain object-top transition-transform duration-300 group-hover:scale-108"
+                  loading="lazy" />
+                <div
+                  class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white text-center p-1 rounded-xl">
+                  <i class="bi bi-eye-fill text-lg mb-0.5 text-amber-300"></i>
+                  <span class="text-[10px] font-extrabold leading-tight">View Full</span>
+                </div>
+              </div>
+              <div class="mt-2 text-center">
+                <p class="text-xs sm:text-sm font-black text-[#1F1714] truncate">Sheet 5</p>
+                <span
+                  class="mt-1 inline-flex items-center justify-center gap-1 text-[9px] font-bold text-[#7C2928] bg-[#FAF0E9] py-0.5 px-2 rounded-md border border-[#7C2928]/15 group-hover:bg-[#7C2928] group-hover:text-white transition-colors">
+                  <i class="bi bi-arrows-fullscreen text-[8px]"></i>
+                  <span>Open ↗</span>
+                </span>
+              </div>
+            </button>
+
+            <!-- Sheet 6 -->
+            <button data-index="5"
+              class="sample-thumb-btn group relative w-24 sm:w-28 md:w-32 shrink-0 rounded-2xl overflow-hidden border-2 transition-all duration-200 p-1.5 bg-white shadow-md border-white/80 opacity-90 hover:opacity-100 hover:scale-105 hover:shadow-xl hover:border-[#7C2928] text-center cursor-pointer flex flex-col justify-between"
+              title="Unit 14: Joins Comparison &amp; Exam Prep">
+              <div
+                class="relative w-full aspect-[1568/2200] rounded-xl overflow-hidden bg-neutral-100 border border-neutral-200">
+                <img src="assets/sql/06_inner_join_match.webp" alt="Sheet 6 - Unit 14: Joins Comparison &amp; Exam Prep"
+                  class="w-full h-full object-contain object-top transition-transform duration-300 group-hover:scale-108"
+                  loading="lazy" />
+                <div
+                  class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white text-center p-1 rounded-xl">
+                  <i class="bi bi-eye-fill text-lg mb-0.5 text-amber-300"></i>
+                  <span class="text-[10px] font-extrabold leading-tight">View Full</span>
+                </div>
+              </div>
+              <div class="mt-2 text-center">
+                <p class="text-xs sm:text-sm font-black text-[#1F1714] truncate">Sheet 6</p>
+                <span
+                  class="mt-1 inline-flex items-center justify-center gap-1 text-[9px] font-bold text-[#7C2928] bg-[#FAF0E9] py-0.5 px-2 rounded-md border border-[#7C2928]/15 group-hover:bg-[#7C2928] group-hover:text-white transition-colors">
+                  <i class="bi bi-arrows-fullscreen text-[8px]"></i>
+                  <span>Open ↗</span>
+                </span>
+              </div>
+            </button>
+
+            <!-- Sheet 7 -->
+            <button data-index="6"
+              class="sample-thumb-btn group relative w-24 sm:w-28 md:w-32 shrink-0 rounded-2xl overflow-hidden border-2 transition-all duration-200 p-1.5 bg-white shadow-md border-white/80 opacity-90 hover:opacity-100 hover:scale-105 hover:shadow-xl hover:border-[#7C2928] text-center cursor-pointer flex flex-col justify-between"
+              title="Unit 14: LEFT OUTER JOIN">
+              <div
+                class="relative w-full aspect-[1568/2200] rounded-xl overflow-hidden bg-neutral-100 border border-neutral-200">
+                <img src="assets/sql/07_left_outer_join.webp" alt="Sheet 7 - Unit 14: LEFT OUTER JOIN"
+                  class="w-full h-full object-contain object-top transition-transform duration-300 group-hover:scale-108"
+                  loading="lazy" />
+                <div
+                  class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white text-center p-1 rounded-xl">
+                  <i class="bi bi-eye-fill text-lg mb-0.5 text-amber-300"></i>
+                  <span class="text-[10px] font-extrabold leading-tight">View Full</span>
+                </div>
+              </div>
+              <div class="mt-2 text-center">
+                <p class="text-xs sm:text-sm font-black text-[#1F1714] truncate">Sheet 7</p>
+                <span
+                  class="mt-1 inline-flex items-center justify-center gap-1 text-[9px] font-bold text-[#7C2928] bg-[#FAF0E9] py-0.5 px-2 rounded-md border border-[#7C2928]/15 group-hover:bg-[#7C2928] group-hover:text-white transition-colors">
+                  <i class="bi bi-arrows-fullscreen text-[8px]"></i>
+                  <span>Open ↗</span>
+                </span>
+              </div>
+            </button>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 10. Trust Section -->
+  <section class="bg-[#EBAF87] pt-12 pb-16 sm:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="max-w-4xl mb-10 text-left">
+        <h2 class="text-3xl sm:text-5xl font-extrabold text-[#1F1714] tracking-tight mb-4">
+          Trusted by Tech Students & Beginners Across India
+        </h2>
+        <p class="text-base sm:text-lg text-[#3E2D24] font-medium leading-relaxed">
+          Stop memorizing syntax in isolation. This visual ebook gives you a structured learning sequence from database
+          fundamentals to multi-table queries that actually stick.
+        </p>
+      </div>
+
+      <!-- 3 High-Impact Outcome Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <!-- Card 1 -->
+        <div
+          class="rounded-2xl p-6 sm:p-8 flex flex-col items-center text-center shadow-xl border transition-all duration-300 hover:-translate-y-2 bg-[#7C2928] text-white border-[#521B18]">
+          <div
+            class="w-16 h-16 rounded-full bg-[#E5A835] flex items-center justify-center mb-4 shadow-md text-white text-2xl">
+            <i class="bi bi-lightbulb-fill"></i>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-extrabold mb-2">Concept Clarity</h3>
+          <p class="text-xs sm:text-sm font-medium leading-relaxed text-white/90">
+            Visual metaphors and diagrams that simplify tough database topics.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div
+          class="rounded-2xl p-6 sm:p-8 flex flex-col items-center text-center shadow-xl border transition-all duration-300 hover:-translate-y-2 bg-white text-[#1F1714] border-[#E2BEA2]/80">
+          <div
+            class="w-16 h-16 rounded-full bg-[#E5A835] flex items-center justify-center mb-4 shadow-md text-white text-2xl">
+            <i class="bi bi-flag-fill"></i>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-extrabold mb-2">Zero Frustration</h3>
+          <p class="text-xs sm:text-sm font-medium leading-relaxed text-[#4A392F]">
+            Logical learning order from scratch without confusing prerequisites.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div
+          class="rounded-2xl p-6 sm:p-8 flex flex-col items-center text-center shadow-xl border transition-all duration-300 hover:-translate-y-2 bg-[#7C2928] text-white border-[#521B18]">
+          <div
+            class="w-16 h-16 rounded-full bg-[#E5A835] flex items-center justify-center mb-4 shadow-md text-white text-2xl">
+            <i class="bi bi-trophy-fill"></i>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-extrabold mb-2">Interview Ready</h3>
+          <p class="text-xs sm:text-sm font-medium leading-relaxed text-white/90">
+            Master the core questions and JOIN problems asked in technical interviews.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 11. Comparison Section -->
+  <section id="comparison" class="bg-[#EBAF87] pt-20 pb-12 sm:pt-28 sm:pb-18">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center mb-12">
+        <h2
+          class="text-2xl sm:text-4xl md:text-5xl font-extrabold text-[#1F1714] tracking-tight flex items-center justify-center gap-2 flex-wrap">
+          <span>💰</span>
+          <span>Why Pay Thousands for 40-Hour Video Courses When You Can Learn Faster for ₹99?</span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <!-- Competitor Column -->
+        <div class="rounded-2xl overflow-hidden shadow-lg border border-[#E2BEA2]/60">
+          <div
+            class="bg-[#7C2928] text-white py-4 px-6 text-center font-extrabold text-lg sm:text-xl flex items-center justify-center gap-2">
+            <span class="text-red-300">✕</span>
+            <span>Generic 40-Hour Video Courses</span>
+          </div>
+
+          <div class="bg-white p-6 sm:p-8 space-y-4">
+            <div class="flex items-start gap-3">
+              <i class="bi bi-x-circle-fill text-red-500 text-lg shrink-0 mt-0.5"></i>
+              <span class="text-sm sm:text-base font-bold text-[#2D201A]">Expensive (₹2,000 to ₹10,000+ for slow video
+                courses)</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <i class="bi bi-x-circle-fill text-red-500 text-lg shrink-0 mt-0.5"></i>
+              <span class="text-sm sm:text-base font-bold text-[#2D201A]">Hours of passive video watching with low
+                retention</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <i class="bi bi-x-circle-fill text-red-500 text-lg shrink-0 mt-0.5"></i>
+              <span class="text-sm sm:text-base font-bold text-[#2D201A]">Syntax-first memorization without conceptual
+                clarity</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <i class="bi bi-x-circle-fill text-red-500 text-lg shrink-0 mt-0.5"></i>
+              <span class="text-sm sm:text-base font-bold text-[#2D201A]">No quick revision notes before exams or
+                interviews</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <i class="bi bi-x-circle-fill text-red-500 text-lg shrink-0 mt-0.5"></i>
+              <span class="text-sm sm:text-base font-bold text-[#2D201A]">Difficult to search or reference quickly on
+                mobile</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <i class="bi bi-x-circle-fill text-red-500 text-lg shrink-0 mt-0.5"></i>
+              <span class="text-sm sm:text-base font-bold text-[#2D201A]">Overwhelming complexity with no clear
+                roadmap</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Our Product Column -->
+        <div class="rounded-2xl overflow-hidden shadow-xl border-2 border-[#7C2928]">
+          <div
+            class="bg-[#521B18] text-white py-4 px-6 text-center font-extrabold text-lg sm:text-xl flex items-center justify-center gap-2">
+            <span class="text-emerald-400">✓</span>
+            <span>Our 16-Unit Practical SQL Ebook</span>
+          </div>
+
+          <div class="bg-white p-6 sm:p-8 space-y-4">
+            <div class="flex items-start gap-3">
+              <i class="bi bi-check-circle-fill text-emerald-600 text-lg shrink-0 mt-0.5"></i>
+              <span class="text-sm sm:text-base font-bold text-[#1F1714]">Complete 16-Unit Ebook Kit at just ₹99
+                one-time</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <i class="bi bi-check-circle-fill text-emerald-600 text-lg shrink-0 mt-0.5"></i>
+              <span class="text-sm sm:text-base font-bold text-[#1F1714]">Concise, high-impact illustrated visual
+                notes</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <i class="bi bi-check-circle-fill text-emerald-600 text-lg shrink-0 mt-0.5"></i>
+              <span class="text-sm sm:text-base font-bold text-[#1F1714]">Concept-first approach with diagrams &
+                metaphors</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <i class="bi bi-check-circle-fill text-emerald-600 text-lg shrink-0 mt-0.5"></i>
+              <span class="text-sm sm:text-base font-bold text-[#1F1714]">2–3 page quick-revision summaries for every
+                topic</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <i class="bi bi-check-circle-fill text-emerald-600 text-lg shrink-0 mt-0.5"></i>
+              <span class="text-sm sm:text-base font-bold text-[#1F1714]">Instant PDF download on Mobile, Tablet &
+                Laptop</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <i class="bi bi-check-circle-fill text-emerald-600 text-lg shrink-0 mt-0.5"></i>
+              <span class="text-sm sm:text-base font-bold text-[#1F1714]">Step-by-step roadmap from zero to JOIN
+                mastery</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Social Proof Counter Strip -->
+      <div class="mt-14 text-center flex flex-col items-center">
+        <div class="inline-block bg-white/90 px-6 py-2 rounded-full border border-[#D49572] shadow-sm mb-3">
+          <span class="text-sm sm:text-base font-black text-[#1F1714]">
+            One Payment of ₹99 • <span class="text-[#7C2928]">Lifetime Ebook Access</span>
+          </span>
+        </div>
+
+        <div class="text-4xl sm:text-6xl font-black text-[#1F1714] tracking-tight">
+          24,800+
+        </div>
+
+        <p class="text-sm sm:text-base font-bold text-[#4A392F] mt-1">
+          Students &amp; Tech Aspirants Mastered SQL With Us
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 12. Student & Learner Reviews -->
+  <section id="reviews" class="bg-[#EBAF87] py-14 sm:py-20 relative">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <div
+          class="inline-flex items-center gap-2 bg-[#7C2928] text-white px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold shadow-md mb-4 uppercase tracking-wider">
+          <i class="bi bi-star-fill text-amber-300"></i>
+          <span>Verified Student Feedback</span>
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-extrabold text-[#1F1714] tracking-tight">
+          What Students &amp; Learners Say
+        </h2>
+        <p class="text-sm sm:text-base font-semibold text-[#4A392F] mt-2">
+          Real feedback from students who cracked college exams and data interviews using these visual notes.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+        <!-- Review Card 1 -->
+        <div
+          class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border-2 border-[#E2BEA2]/60 flex flex-col justify-between hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-4">
+              <div class="flex items-center gap-1 text-amber-500 text-lg">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <span
+                class="inline-flex items-center gap-1 text-[11px] font-extrabold px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
+                <i class="bi bi-patch-check-fill text-emerald-600"></i> Verified Buyer
+              </span>
+            </div>
+            <p class="text-sm sm:text-base text-[#2D201A] font-semibold leading-relaxed mb-6 italic">
+              &ldquo;The visual explanation of SQL JOINs and query execution order in this ebook is incredible. Concepts
+              that 10 YouTube videos couldn't clarify were crystal clear in 5 minutes.&rdquo;
+            </p>
+          </div>
+          <div class="flex items-center gap-3.5 pt-4 border-t border-neutral-100">
+            <div
+              class="w-12 h-12 rounded-full overflow-hidden border-2 border-[#7C2928] bg-neutral-100 shrink-0 shadow-md">
+              <img src="assets/testimonial_diya.png" alt="Diya Gupta" class="w-full h-full object-cover" />
+            </div>
+            <div>
+              <h3 class="text-base font-extrabold text-[#1F1714]">Diya Gupta</h3>
+              <p class="text-xs font-bold text-[#7C2928]">BCA Final Year Student</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review Card 2 -->
+        <div
+          class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border-2 border-[#E2BEA2]/60 flex flex-col justify-between hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-4">
+              <div class="flex items-center gap-1 text-amber-500 text-lg">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <span
+                class="inline-flex items-center gap-1 text-[11px] font-extrabold px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
+                <i class="bi bi-patch-check-fill text-emerald-600"></i> Verified Buyer
+              </span>
+            </div>
+            <p class="text-sm sm:text-base text-[#2D201A] font-semibold leading-relaxed mb-6 italic">
+              &ldquo;I was struggling with WHERE vs HAVING and PRIMARY vs FOREIGN KEY constraints. This ebook simplified
+              everything with real-world examples and diagrams. Best ₹99 investment!&rdquo;
+            </p>
+          </div>
+          <div class="flex items-center gap-3.5 pt-4 border-t border-neutral-100">
+            <div
+              class="w-12 h-12 rounded-full overflow-hidden border-2 border-[#7C2928] bg-neutral-100 shrink-0 shadow-md">
+              <img src="assets/testimonial_rohit.png" alt="Aman Sharma" class="w-full h-full object-cover" />
+            </div>
+            <div>
+              <h3 class="text-base font-extrabold text-[#1F1714]">Aman Sharma</h3>
+              <p class="text-xs font-bold text-[#7C2928]">Aspiring Data Analyst</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 14. Frequently Asked Questions -->
+  <section id="faq" class="bg-[#EBAF87] pt-12 pb-0 sm:pt-16 sm:pb-0 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-5xl font-extrabold text-center text-[#1F1714] mb-12 tracking-tight">
+        Frequently Asked Questions (FAQ)
+      </h2>
+
+      <!-- Centered Accordion List -->
+      <div class="max-w-4xl mx-auto space-y-3.5 pb-12 sm:pb-16">
+
+        <!-- FAQ 1 (Open by default) -->
+        <div
+          class="faq-item bg-white rounded-2xl shadow-md border border-[#E2BEA2]/60 overflow-hidden transition-all duration-200">
+          <button
+            class="faq-trigger w-full py-4 px-6 text-left flex items-center justify-between gap-4 font-extrabold text-base sm:text-lg text-[#1F1714] hover:bg-neutral-50 transition-colors">
+            <span>Is this ebook suitable for complete beginners?</span>
+            <span class="shrink-0">
+              <i class="faq-arrow bi bi-arrow-down text-lg text-[#7C2928]"></i>
+            </span>
+          </button>
+          <div
+            class="faq-body block px-6 pb-5 text-sm sm:text-base font-semibold text-[#3A2C25] leading-relaxed border-t border-neutral-100 pt-3 whitespace-pre-line bg-neutral-50/50">
+            Yes! The ebook starts with basic database fundamentals and progressively moves into tables, queries,
+            constraints, keys, and JOINs. No prior coding or SQL knowledge is required.
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div
+          class="faq-item bg-white rounded-2xl shadow-md border border-[#E2BEA2]/60 overflow-hidden transition-all duration-200">
+          <button
+            class="faq-trigger w-full py-4 px-6 text-left flex items-center justify-between gap-4 font-extrabold text-base sm:text-lg text-[#1F1714] hover:bg-neutral-50 transition-colors">
+            <span>How do I receive the ebook after purchase?</span>
+            <span class="shrink-0">
+              <i class="faq-arrow bi bi-arrow-right text-lg text-[#1F1714]"></i>
+            </span>
+          </button>
+          <div
+            class="faq-body hidden px-6 pb-5 text-sm sm:text-base font-semibold text-[#3A2C25] leading-relaxed border-t border-neutral-100 pt-3 whitespace-pre-line bg-neutral-50/50">
+            Immediately upon successful payment on Superprofile, you will be redirected to an instant download page.
+            You will also receive an automated email confirmation containing your direct PDF download link.
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div
+          class="faq-item bg-white rounded-2xl shadow-md border border-[#E2BEA2]/60 overflow-hidden transition-all duration-200">
+          <button
+            class="faq-trigger w-full py-4 px-6 text-left flex items-center justify-between gap-4 font-extrabold text-base sm:text-lg text-[#1F1714] hover:bg-neutral-50 transition-colors">
+            <span>Does this cover SQL JOINs and multi-table queries?</span>
+            <span class="shrink-0">
+              <i class="faq-arrow bi bi-arrow-right text-lg text-[#1F1714]"></i>
+            </span>
+          </button>
+          <div
+            class="faq-body hidden px-6 pb-5 text-sm sm:text-base font-semibold text-[#3A2C25] leading-relaxed border-t border-neutral-100 pt-3 whitespace-pre-line bg-neutral-50/50">
+            Yes, absolutely. Unit 14 is one of the most comprehensive units in the ebook, featuring detailed
+            explanations, Venn diagrams, syntax breakdowns, and real-world examples for INNER, LEFT, RIGHT, and FULL
+            OUTER JOINs.
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div
+          class="faq-item bg-white rounded-2xl shadow-md border border-[#E2BEA2]/60 overflow-hidden transition-all duration-200">
+          <button
+            class="faq-trigger w-full py-4 px-6 text-left flex items-center justify-between gap-4 font-extrabold text-base sm:text-lg text-[#1F1714] hover:bg-neutral-50 transition-colors">
+            <span>Can I read this on mobile or print it out?</span>
+            <span class="shrink-0">
+              <i class="faq-arrow bi bi-arrow-right text-lg text-[#1F1714]"></i>
+            </span>
+          </button>
+          <div
+            class="faq-body hidden px-6 pb-5 text-sm sm:text-base font-semibold text-[#3A2C25] leading-relaxed border-t border-neutral-100 pt-3 whitespace-pre-line bg-neutral-50/50">
+            Yes! The ebook is formatted as a crisp, high-resolution PDF that displays beautifully on smartphones,
+            tablets, iPads, and laptops, and is fully printable for physical offline study.
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div
+          class="faq-item bg-white rounded-2xl shadow-md border border-[#E2BEA2]/60 overflow-hidden transition-all duration-200">
+          <button
+            class="faq-trigger w-full py-4 px-6 text-left flex items-center justify-between gap-4 font-extrabold text-base sm:text-lg text-[#1F1714] hover:bg-neutral-50 transition-colors">
+            <span>Is this a one-time purchase or a subscription?</span>
+            <span class="shrink-0">
+              <i class="faq-arrow bi bi-arrow-right text-lg text-[#1F1714]"></i>
+            </span>
+          </button>
+          <div
+            class="faq-body hidden px-6 pb-5 text-sm sm:text-base font-semibold text-[#3A2C25] leading-relaxed border-t border-neutral-100 pt-3 whitespace-pre-line bg-neutral-50/50">
+            It is a strictly one-time payment of ₹99 with lifetime access and free updates for the 2026 edition. There
+            are no recurring fees or hidden charges.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 15. Final High-Conversion CTA -->
+  <section id="purchase"
+    class="bg-[#521B18] py-14 sm:py-20 text-white relative overflow-hidden border-t-4 border-[#7C2928]">
+    <div class="absolute -top-24 -right-24 w-96 h-96 bg-[#7C2928]/40 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-[#E5A835]/15 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      <div
+        class="inline-flex items-center gap-2 bg-white/10 px-4 py-1.5 rounded-full text-xs sm:text-sm font-extrabold uppercase tracking-wider text-[#E5A835] mb-6">
+        <i class="bi bi-lightning-charge-fill"></i>
+        <span>Instant Digital Access • 2026 Edition</span>
+      </div>
+
+      <h2 class="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight leading-tight mb-6">
+        Start Smarter Preparation Today.
+      </h2>
+
+      <p class="text-base sm:text-xl text-neutral-200 font-medium max-w-2xl mx-auto mb-8 leading-relaxed">
+        Master SQL fundamentals, table relationships, queries, and JOINs step-by-step with practical visual guides and
+        illustrated examples.
+      </p>
+
+      <!-- Pricing & CTA Button -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8">
+        <div class="flex items-baseline gap-3">
+          <span class="text-2xl text-neutral-400 line-through">
+            ₹1,299.00
+          </span>
+          <span class="text-4xl sm:text-5xl font-black text-[#E5A835]">
+            ₹99.00
+          </span>
+        </div>
+
+        <a href="https://superprofile.bio/vp/6aa90df8ecf1df0013c2c708" target="_blank" rel="noopener noreferrer"
+          class="inline-flex items-center gap-3 bg-[#E5A835] hover:bg-[#F59E0B] text-[#1F1714] font-black text-lg px-8 py-4 rounded-xl shadow-xl transition-all duration-200 hover:scale-105 active:scale-95">
+          <i class="bi bi-bag-check text-xl"></i>
+          <span>Get Notes Now (₹99)</span>
+          <i class="bi bi-arrow-right text-lg"></i>
+        </a>
+      </div>
+
+      <!-- Trust Badges -->
+      <div class="flex flex-wrap items-center justify-center gap-6 text-xs sm:text-sm font-semibold text-neutral-300">
+        <div class="flex items-center gap-2">
+          <i class="bi bi-shield-check text-emerald-400 text-base"></i>
+          <span>Instant PDF Download</span>
+        </div>
+        <span>•</span>
+        <div class="flex items-center gap-2">
+          <i class="bi bi-shield-check text-emerald-400 text-base"></i>
+          <span>Lifetime Access & Free Updates</span>
+        </div>
+        <span>•</span>
+        <div class="flex items-center gap-2">
+          <i class="bi bi-shield-check text-emerald-400 text-base"></i>
+          <span>WhatsApp & Email Delivery</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 16. Comprehensive Footer -->
+  <footer class="bg-[#1F1714] text-neutral-400 pt-6 pb-24 sm:pb-6 border-t border-neutral-800">
+    <div
+      class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-semibold">
+      <p>© 2026 SQL Mastery. All Rights Reserved. Practical SQL Learning &amp; Database Guide.</p>
+      <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-neutral-300">
+        <a href="terms.html" class="hover:text-white transition-colors">Terms</a>
+        <span>•</span>
+        <a href="privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+        <span>•</span>
+        <a href="refund-policy.html" class="hover:text-white transition-colors">Refund Policy</a>
+        <span>•</span>
+        <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 17. Mobile Sticky Bottom Purchase Bar -->
+  <div id="mobile-sticky-bar"
+    class="hidden sm:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#521B18] text-white p-3 border-t-2 border-[#7C2928] shadow-2xl items-center justify-between gap-3 animate-slideUp">
+    <div class="flex flex-col">
+      <span class="text-[10px] uppercase tracking-wider text-neutral-300 font-bold">
+        One-Time Payment
+      </span>
+      <div class="flex items-baseline gap-2">
+        <span class="text-xl font-black text-[#E5A835]">
+          ₹99
+        </span>
+        <span class="text-xs line-through text-neutral-400">
+          ₹1,299
+        </span>
+      </div>
+    </div>
+
+    <a href="https://superprofile.bio/vp/6aa90df8ecf1df0013c2c708" target="_blank" rel="noopener noreferrer"
+      class="flex items-center gap-2 bg-[#E5A835] hover:bg-[#F59E0B] text-[#1F1714] font-black text-sm px-5 py-2.5 rounded-xl shadow-md active:scale-95 transition-all">
+      <i class="bi bi-lightning-charge-fill"></i>
+      <span>Buy Now (₹99)</span>
+    </a>
+  </div>
+
+  <!-- Floating Hover Zoom Preview Card (Desktop) -->
+  <div id="thumb-hover-preview"
+    class="hidden pointer-events-none fixed z-50 bg-white rounded-2xl shadow-2xl border-2 border-[#7C2928] p-3 w-64 sm:w-72 transition-all duration-150 transform -translate-x-1/2">
+    <div class="flex items-center justify-between gap-2 mb-2 pb-1.5 border-b border-neutral-100">
+      <span id="hover-preview-badge"
+        class="text-[10px] font-extrabold bg-[#7C2928] text-white px-2 py-0.5 rounded-full uppercase tracking-wider">
+        Sheet 1
+      </span>
+      <span class="text-[10px] font-bold text-[#7C2928] flex items-center gap-1">
+        <i class="bi bi-arrows-fullscreen text-[9px]"></i> Click for full view
+      </span>
+    </div>
+    <div
+      class="relative w-full aspect-[1568/2200] rounded-xl overflow-hidden bg-neutral-50 shadow-inner border border-neutral-200">
+      <img id="hover-preview-img" src="assets/sql/01_what_is_sql.webp" alt="Preview"
+        class="w-full h-full object-contain object-top" />
+    </div>
+    <p id="hover-preview-title" class="text-xs font-black text-[#1F1714] mt-2 truncate text-center">
+      Unit 1: What is SQL?
+    </p>
+  </div>
+
+  <!-- 18. Sample SQL Pages Interactive Viewer Modal -->
+  <div id="sql-preview-modal"
+    class="sql-modal-backdrop hidden fixed inset-0 z-50 bg-black/90 backdrop-blur-md items-center justify-center p-2 sm:p-4 md:p-6 overflow-y-auto">
+    <div
+      class="bg-[#F7E5D3] rounded-2xl sm:rounded-3xl max-w-4xl w-full border-2 border-[#7C2928] shadow-2xl overflow-hidden flex flex-col max-h-[96vh] sm:max-h-[92vh] my-auto">
+
+      <!-- Modal Header -->
+      <div class="bg-[#521B18] text-white px-3 sm:px-6 py-2.5 sm:py-3.5 flex items-center justify-between shrink-0">
+        <div class="flex items-center gap-2 sm:gap-3 min-w-0">
+          <div
+            class="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-[#7C2928] flex items-center justify-center text-[#E5A835] text-base sm:text-lg shrink-0">
+            <i class="bi bi-book"></i>
+          </div>
+          <div class="min-w-0">
+            <div class="flex items-center gap-2">
+              <h3 id="modal-title" class="font-extrabold text-sm sm:text-base md:text-lg leading-tight truncate">
+                Unit 1: What is SQL?
+              </h3>
+              <span id="modal-counter-badge"
+                class="bg-[#E5A835] text-[#1F1714] font-black text-[10px] sm:text-xs px-2 py-0.5 rounded-full shrink-0">
+                1 / 7
+              </span>
+            </div>
+            <p id="modal-subtitle" class="text-[11px] sm:text-xs text-neutral-300 truncate">
+              Sample 1 of 7 — Practical Visual Notes
+            </p>
+          </div>
+        </div>
+
+        <button onclick="closeSqlModal()"
+          class="min-w-[40px] min-h-[40px] sm:min-w-[44px] sm:min-h-[44px] flex items-center justify-center rounded-full hover:bg-white/20 active:bg-white/30 transition-colors text-white shrink-0 ml-2"
+          aria-label="Close preview">
+          <i class="bi bi-x-lg text-lg sm:text-xl"></i>
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="relative flex-1 min-h-0 bg-neutral-950 flex items-center justify-center p-2 sm:p-4 overflow-hidden">
+        <div id="modal-img-container"
+          class="relative w-full max-w-[620px] max-h-full flex items-center justify-center select-none">
+          <img id="modal-img" src="assets/sql/01_what_is_sql.webp" alt="Sample sheet preview"
+            class="max-w-full max-h-[56vh] sm:max-h-[66vh] md:max-h-[70vh] w-auto h-auto object-contain rounded-lg shadow-2xl" />
+        </div>
+
+        <!-- Mobile swipe hint -->
+        <div
+          class="sm:hidden absolute bottom-2 left-1/2 -translate-x-1/2 bg-black/75 text-neutral-200 text-[10px] font-semibold px-3 py-1 rounded-full pointer-events-none backdrop-blur-xs flex items-center gap-1.5 shadow-md border border-white/10">
+          <i class="bi bi-arrow-left-right text-[10px]"></i>
+          <span>Swipe left / right for more sheets</span>
+        </div>
+
+        <!-- Left / Right Nav Arrows -->
+        <button id="modal-prev-btn"
+          class="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-black/60 hover:bg-[#7C2928] text-white border border-white/20 flex items-center justify-center shadow-lg active:scale-90 transition-all z-10"
+          aria-label="Previous sample">
+          <i class="bi bi-chevron-left text-base sm:text-lg"></i>
+        </button>
+
+        <button id="modal-next-btn"
+          class="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-black/60 hover:bg-[#7C2928] text-white border border-white/20 flex items-center justify-center shadow-lg active:scale-90 transition-all z-10"
+          aria-label="Next sample">
+          <i class="bi bi-chevron-right text-base sm:text-lg"></i>
+        </button>
+      </div>
+
+      <!-- Modal Footer -->
+      <div
+        class="bg-white px-3 sm:px-6 py-2.5 sm:py-3.5 flex flex-col sm:flex-row items-center justify-between gap-2.5 sm:gap-4 border-t border-[#E2BEA2] shrink-0">
+        <div id="modal-page-pills"
+          class="flex items-center gap-1.5 overflow-x-auto py-1 max-w-full no-scrollbar w-full sm:w-auto">
+          <!-- Dynamically populated page pills -->
+        </div>
+
+        <div class="flex items-center gap-2 w-full sm:w-auto justify-between sm:justify-end shrink-0">
+          <button onclick="closeSqlModal()"
+            class="px-3.5 sm:px-4 py-2 min-h-[38px] rounded-xl text-xs sm:text-sm font-bold text-[#4A392F] hover:bg-neutral-100 active:bg-neutral-200 transition-colors">
+            Close
+          </button>
+          <a href="https://superprofile.bio/vp/6aa90df8ecf1df0013c2c708" target="_blank" rel="noopener noreferrer"
+            onclick="closeSqlModal()"
+            class="flex-1 sm:flex-initial text-center bg-[#7C2928] hover:bg-[#521B18] text-white px-4 sm:px-5 py-2 min-h-[38px] flex items-center justify-center rounded-xl text-xs sm:text-sm font-bold shadow transition-all hover:scale-105 active:scale-95">
+            <span>Get Full Ebook (₹99)</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- Meta Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2280534892790197');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=2280534892790197&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel Code -->
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
