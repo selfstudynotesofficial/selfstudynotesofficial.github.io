@@ -9,7 +9,7 @@ var PRODUCT_CONFIG = {
   buyUrl: "https://superprofile.bio/vp/master-sql-from-zero-—-learn-to-write-real-sql-queries-with-confidence",
   whatsappNumber: "+918595403030",
   whatsappDisplay: "+91-8595403030",
-  supportEmail: "admin@xambuddy.in",
+  supportEmail: "admin@selfstudynotes.com",
   
   sqlSamples: [
     {
