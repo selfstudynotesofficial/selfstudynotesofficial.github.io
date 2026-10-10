@@ -6,10 +6,10 @@ var PRODUCT_CONFIG = {
   badge: "2026 EDITION",
   currentPrice: 99,
   originalPrice: 1299,
-  buyUrl: "https://superprofile.bio/vp/master-sql-from-zero-—-learn-to-write-real-sql-queries-with-confidence",
+  buyUrl: "https://superprofile.bio/vp/sql-handwritten-notes-–-learn-sql-from-basics-to-advanced",
   whatsappNumber: "+918595403030",
   whatsappDisplay: "+91-8595403030",
-  supportEmail: "admin@selfstudynotes.com",
+  supportEmail: "admin@selfstudynotes.com/sql",
   
   sqlSamples: [
     {
