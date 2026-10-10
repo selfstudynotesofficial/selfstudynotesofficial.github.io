@@ -1,0 +1,254 @@
+/* ==========================================================================
+   SQL Mastery - Main Stylesheet (style.css)
+   ========================================================================== */
+
+:root {
+  --color-peach: #EBAF87;
+  --color-peach-light: #F4DDCB;
+  --color-cream: #F7E5D3;
+  --color-cream-light: #FCF7F0;
+  --color-maroon: #7C2928;
+  --color-maroon-dark: #521B18;
+  --color-maroon-deep: #3E1311;
+  --color-text: #1F1714;
+  --color-border: #E2BEA2;
+  --color-border-dark: #D49F7B;
+  --color-gold: #E5A835;
+  --color-gold-light: #F59E0B;
+}
+
+html {
+  scroll-behavior: smooth;
+  color: var(--color-text);
+  background-color: var(--color-peach);
+  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: var(--color-peach);
+  color: var(--color-text);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F4DDCB;
+}
+::-webkit-scrollbar-thumb {
+  background: #7C2928;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #521B18;
+}
+
+/* Diagonal Strikethrough */
+.strikethrough-red {
+  position: relative;
+  display: inline-block;
+}
+.strikethrough-red::after {
+  content: '';
+  position: absolute;
+  left: -4px;
+  right: -4px;
+  top: 52%;
+  height: 3px;
+  background-color: #DC2626;
+  transform: rotate(-3deg);
+  border-radius: 2px;
+}
+
+/* Animations */
+@keyframes softPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.92;
+    transform: scale(1.02);
+  }
+}
+.animate-soft-pulse {
+  animation: softPulse 2.5s infinite ease-in-out;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: marquee 25s linear infinite;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.25s ease-out forwards;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+.animate-slideUp {
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Hide scrollbar helper */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  color: inherit;
+}
+
+/* Accordion Transition */
+.faq-accordion-body {
+  display: none;
+}
+.faq-accordion-item.active .faq-accordion-body {
+  display: block;
+}
+.faq-accordion-item.active .faq-icon {
+  transform: rotate(90deg);
+  color: #7C2928;
+}
+.faq-icon {
+  transition: transform 0.2s ease;
+}
+
+/* Tab active styles */
+.sample-tab-btn.active {
+  background-color: #7C2928 !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transform: scale(1.05);
+}
+.sample-thumb-btn.active {
+  border-color: #7C2928 !important;
+  box-shadow: 0 10px 15px -3px rgba(124, 41, 40, 0.25), 0 0 0 3px #7C2928 !important;
+  transform: scale(1.05);
+  opacity: 1 !important;
+  background-color: #FFFFFF !important;
+}
+
+#thumb-hover-preview {
+  animation: popIn 0.18s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 8px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
+  }
+}
+
+/* Modal styling */
+.sql-modal-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.88);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+}
+.sql-modal-backdrop.flex,
+.sql-modal-backdrop.show {
+  display: flex !important;
+}
+
+/* Mobile & touch optimizations */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.overflow-x-auto,
+.overflow-y-auto {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Safe area for modern mobile devices (iPhone home indicator) */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  #mobile-sticky-bar {
+    padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+  }
+}
+
+/* Fluid responsive typography on very small mobile devices (<= 380px) */
+@media (max-width: 380px) {
+  h1 {
+    font-size: 1.85rem !important;
+    line-height: 1.25 !important;
+  }
+  h2 {
+    font-size: 1.6rem !important;
+    line-height: 1.25 !important;
+  }
+  .sample-tab-btn {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+    font-size: 0.75rem !important;
+  }
+}
+
+/* Ensure buttons have comfortable minimum touch targets (44px) */
+button, a.inline-flex, a.flex {
+  touch-action: manipulation;
+}
+
+/* Image rendering smoothness */
+img {
+  image-rendering: -webkit-optimize-contrast;
+}
+
+

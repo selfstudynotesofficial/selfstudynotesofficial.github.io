@@ -1,0 +1,173 @@
+﻿/* ==========================================================================
+   Custom SCSS Stylesheet - SQL Mastery Static Website
+   ========================================================================== */
+
+// Color Variables
+-peach: #EBAF87;
+-peach-light: #F4DDCB;
+-cream: #F7E5D3;
+-cream-light: #FCF7F0;
+-cream-dark: #EED6C0;
+-maroon: #7C2928;
+-maroon-light: #963433;
+-maroon-dark: #521B18;
+-maroon-deep: #3E1311;
+-text: #1F1714;
+-text-muted: #4A3E39;
+-border: #E2BEA2;
+-border-dark: #D49F7B;
+-gold: #E5A835;
+-gold-light: #F59E0B;
+-white: #FFFFFF;
+
+// Root CSS Custom Properties
+:root {
+  --color-peach: #{-peach};
+  --color-peach-light: #{-peach-light};
+  --color-cream: #{-cream};
+  --color-cream-light: #{-cream-light};
+  --color-maroon: #{-maroon};
+  --color-maroon-dark: #{-maroon-dark};
+  --color-text: #{-text};
+  --color-border: #{-border};
+  --color-gold: #{-gold};
+}
+
+// Global Reset & Base
+html {
+  scroll-behavior: smooth;
+  color: -text;
+  background-color: -peach;
+  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: -peach;
+  color: -text;
+}
+
+// Custom Scrollbar
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: -peach-light;
+}
+::-webkit-scrollbar-thumb {
+  background: -maroon;
+  border-radius: 4px;
+
+  &:hover {
+    background: -maroon-dark;
+  }
+}
+
+// Strikethrough Effect
+.strikethrough-red {
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: -4px;
+    right: -4px;
+    top: 52%;
+    height: 3px;
+    background-color: #DC2626;
+    transform: rotate(-3deg);
+    border-radius: 2px;
+  }
+}
+
+// Keyframe Animations
+@keyframes softPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.92;
+    transform: scale(1.02);
+  }
+}
+
+.animate-soft-pulse {
+  animation: softPulse 2.5s infinite ease-in-out;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: marquee 25s linear infinite;
+
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.25s ease-out forwards;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.animate-slideUp {
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+// Utility Helpers
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+// Fix Bootstrap conflict with Tailwind font weights & links
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  color: inherit;
+}
+
+// Shadow Presets
+.shadow-warm {
+  box-shadow: 0 10px 25px -5px rgba(124, 41, 40, 0.08), 0 8px 10px -6px rgba(124, 41, 40, 0.05);
+}
+.shadow-warm-lg {
+  box-shadow: 0 20px 30px -10px rgba(124, 41, 40, 0.12), 0 10px 15px -5px rgba(124, 41, 40, 0.08);
+}
