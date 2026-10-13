@@ -1,0 +1,358 @@
+/* ==========================================================================
+   SQL Mastery - Main Stylesheet (style.css)
+   ========================================================================== */
+
+:root {
+  --color-peach: #EBAF87;
+  --color-peach-light: #F4DDCB;
+  --color-cream: #F7E5D3;
+  --color-cream-light: #FCF7F0;
+  --color-maroon: #7C2928;
+  --color-maroon-dark: #521B18;
+  --color-maroon-deep: #3E1311;
+  --color-text: #1F1714;
+  --color-border: #E2BEA2;
+  --color-border-dark: #D49F7B;
+  --color-gold: #E5A835;
+  --color-gold-light: #F59E0B;
+}
+
+html {
+  scroll-behavior: smooth;
+  color: var(--color-text);
+  background-color: var(--color-peach);
+  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow-x: clip;
+  max-width: 100vw;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: clip;
+  max-width: 100vw;
+  width: 100%;
+  position: relative;
+  background-color: var(--color-peach);
+  color: var(--color-text);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F4DDCB;
+}
+::-webkit-scrollbar-thumb {
+  background: #7C2928;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #521B18;
+}
+
+/* Diagonal Strikethrough */
+.strikethrough-red {
+  position: relative;
+  display: inline-block;
+}
+.strikethrough-red::after {
+  content: '';
+  position: absolute;
+  left: -4px;
+  right: -4px;
+  top: 52%;
+  height: 3px;
+  background-color: #DC2626;
+  transform: rotate(-3deg);
+  border-radius: 2px;
+}
+
+/* Animations */
+@keyframes softPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.92;
+    transform: scale(1.02);
+  }
+}
+.animate-soft-pulse {
+  animation: softPulse 2.5s infinite ease-in-out;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: marquee 25s linear infinite;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.25s ease-out forwards;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+.animate-slideUp {
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Hide scrollbar helper */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Touch-friendly horizontal scroll snap */
+.snap-carousel {
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+.snap-carousel > * {
+  scroll-snap-align: center;
+}
+
+/* CTA Button Glow Animation */
+@keyframes ctaGlow {
+  0%, 100% {
+    box-shadow: 0 6px 20px -2px rgba(124, 41, 40, 0.4), 0 0 0 0 rgba(229, 168, 53, 0.6);
+  }
+  50% {
+    box-shadow: 0 8px 28px -2px rgba(124, 41, 40, 0.65), 0 0 0 6px rgba(229, 168, 53, 0);
+  }
+}
+.animate-cta-glow {
+  animation: ctaGlow 2.4s infinite ease-in-out;
+}
+
+/* Gradient accents */
+.gradient-text-gold {
+  background: linear-gradient(135deg, #E5A835 0%, #F59E0B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  color: inherit;
+}
+
+/* Accordion Transition */
+.faq-accordion-body {
+  display: none;
+}
+.faq-accordion-item.active .faq-accordion-body {
+  display: block;
+}
+.faq-accordion-item.active .faq-icon {
+  transform: rotate(90deg);
+  color: #7C2928;
+}
+.faq-icon {
+  transition: transform 0.2s ease;
+}
+
+/* Tab active styles */
+.sample-tab-btn.active {
+  background-color: #7C2928 !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transform: scale(1.05);
+}
+.sample-thumb-btn.active {
+  border-color: #7C2928 !important;
+  box-shadow: 0 10px 15px -3px rgba(124, 41, 40, 0.25), 0 0 0 3px #7C2928 !important;
+  transform: scale(1.05);
+  opacity: 1 !important;
+  background-color: #FFFFFF !important;
+}
+
+#thumb-hover-preview {
+  animation: popIn 0.18s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 8px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
+  }
+}
+
+/* Modal styling */
+.sql-modal-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+}
+.sql-modal-backdrop.flex,
+.sql-modal-backdrop.show {
+  display: flex !important;
+}
+
+@media (max-width: 640px) {
+  .sql-modal-backdrop {
+    padding: 0 !important;
+  }
+  .modal-dialog-fullscreen-mobile {
+    width: 100vw !important;
+    height: 100dvh !important;
+    max-height: 100dvh !important;
+    border-radius: 0 !important;
+    border: none !important;
+  }
+}
+
+/* Hardware accelerated smooth zoom transforms */
+.zoom-canvas-container {
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  overflow: hidden;
+}
+
+.zoom-target {
+  will-change: transform;
+  transform-origin: center center;
+  transition: transform 0.05s ease-out;
+}
+
+.zoom-target.animating {
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.pinch-zoom-hint {
+  animation: pulseHint 2.4s infinite ease-in-out;
+}
+
+@keyframes pulseHint {
+  0%, 100% {
+    transform: translate(-50%, 0) scale(1);
+    opacity: 0.95;
+  }
+  50% {
+    transform: translate(-50%, -3px) scale(1.03);
+    opacity: 1;
+  }
+}
+
+/* Mobile & touch optimizations */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  max-width: 100vw;
+  width: 100%;
+  overflow-x: clip;
+  position: relative;
+}
+
+.overflow-x-auto,
+.overflow-y-auto {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Safe area for modern mobile devices (iPhone home indicator) */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  #mobile-sticky-bar {
+    padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+  }
+}
+
+/* Fluid responsive typography on very small mobile devices (<= 380px) */
+@media (max-width: 380px) {
+  h1 {
+    font-size: 1.85rem !important;
+    line-height: 1.25 !important;
+  }
+  h2 {
+    font-size: 1.6rem !important;
+    line-height: 1.25 !important;
+  }
+  .sample-tab-btn {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+    font-size: 0.75rem !important;
+  }
+}
+
+/* Ensure buttons have comfortable minimum touch targets (44px) */
+button, a.inline-flex, a.flex {
+  touch-action: manipulation;
+}
+
+/* Image rendering smoothness and responsive scaling */
+img {
+  max-width: 100%;
+  height: auto;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* Ensure headings and text never overflow mobile viewports */
+h1, h2, h3, h4, h5, h6, p, span, a, li, button {
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 480px) {
+  #site-header .max-w-7xl {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+}
+
+
+
+

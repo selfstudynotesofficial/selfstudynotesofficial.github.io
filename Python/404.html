@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Redirecting to Home...</title>
+  <meta http-equiv="refresh" content="0; url=/" />
+  <script>
+    (function () {
+      var segments = window.location.pathname.split('/').filter(Boolean);
+      var knownPages = ['about', 'contact', 'terms', 'privacy-policy', 'refund-policy'];
+      var target = '/';
+      if (segments.length > 0) {
+        var last = segments[segments.length - 1].toLowerCase();
+        if (knownPages.indexOf(last) !== -1) {
+          target = '/' + last + '.html';
+        } else if (segments[0].toLowerCase() === 'xambuddy') {
+          target = '/xambuddy/';
+        }
+      }
+      window.location.replace(target);
+    })();
+  </script>
+</head>
+<body style="margin:0; padding:40px; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; text-align:center; background:#EBAF87; color:#1F1714;">
+  <p style="font-size:18px; font-weight:600;">Redirecting to Home...</p>
+  <p style="font-size:14px; opacity:0.8;">Agar aap automatically redirect nahi hote hain, toh <a href="/" id="fallback-link" style="color:#7C2928; font-weight:bold; text-decoration:underline;">yahan click karein</a>.</p>
+  <script>
+    (function () {
+      var segments = window.location.pathname.split('/').filter(Boolean);
+      if (segments.length > 0 && segments[0].toLowerCase() === 'xambuddy') {
+        var link = document.getElementById('fallback-link');
+        if (link) link.setAttribute('href', '/xambuddy/');
+      }
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+# Force UTF-8 Encoding on Apache/cPanel to prevent icon & currency symbol corruption
+AddDefaultCharset UTF-8
+AddCharset UTF-8 .html .htm .css .js .json .xml
+
+<IfModule mod_mime.c>
+    AddType "text/html; charset=UTF-8" .html .htm
+    AddType "text/css; charset=UTF-8" .css
+    AddType "application/javascript; charset=UTF-8" .js
+    AddType "application/json; charset=UTF-8" .json
+</IfModule>
+
+<IfModule mod_headers.c>
+    <FilesMatch "\.(html|htm)$">
+        Header set Content-Type "text/html; charset=UTF-8"
+    </FilesMatch>
+</IfModule>
+
+# Redirect 404 errors directly to home
+ErrorDocument 404 /index.html
